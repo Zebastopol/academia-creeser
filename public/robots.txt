@@ -1,0 +1,14 @@
+# robots.txt para Club Deportivo Creeser
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://academia-creeser.vercel.app/sitemap.xml
+
+# Disallow admin pages (cuando estén implementadas)
+Disallow: /admin/
+Disallow: /api/
+
+# Crawl-delay
+Crawl-delay: 10
