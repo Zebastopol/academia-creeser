@@ -305,16 +305,16 @@ Este proyecto es privado y pertenece al Club Deportivo Creeser.
 
 ## 👥 Equipo
 
-- **Desarrollo**: BLACKBOXAI
+- **Desarrollo**: Zebastopol
 - **Cliente**: Club Deportivo Creeser
 
 ## 📞 Contacto
 
-- **Email**: contacto@creeser.cl
+- **Email**: web.agency.zpol@gmail.com
 - **Teléfono**: +56 9 1234 5678
-- **Dirección**: Av. Principal 123, Santiago, Chile
+- **Dirección**: Palmas de Mallorca 673 , La Reina, Santiago de Chile
 
 ---
 
-**Desarrollado con ❤️ para Club Deportivo Creeser**
+**Desarrollado con ❤️y:octocat: para Club Deportivo Creeser**
 # academia-creeser
