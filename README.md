@@ -317,5 +317,5 @@ Este proyecto es privado y pertenece al Club Deportivo Creeser.
 ---
 
 
-**Desarrollado con ❤️y <img width="64" height="64" alt="octocat" src="https://github.com/user-attachments/assets/10120491-3f07-43f6-acfb-7ebc09b8d61c" /> para Club Deportivo Creeser**
+**Desarrollado con ❤️y🐙🐈‍⬛ para Club Deportivo Creeser**
 # academia-creeser
