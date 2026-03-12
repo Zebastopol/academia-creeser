@@ -1,4 +1,4 @@
-# robots.txt para Club Deportivo Creeser
+# robots.txt para Club Deportivo Academia Creeser
 
 User-agent: *
 Allow: /

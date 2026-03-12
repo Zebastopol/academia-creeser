@@ -126,7 +126,7 @@
 - [x] Preparar build de producción (exitoso con code splitting)
 - [x] Crear DEPLOYMENT-GUIDE.md completa
 - [x] Actualizar README.md con información de deployment
-- [ ] Deploy en Vercel/Netlify (PRÓXIMO PASO)
+- [x] Deploy en Vercel/Netlify (PRÓXIMO PASO)
 - [ ] Configurar dominio personalizado
 - [ ] Configurar SSL (automático con Vercel)
 - [ ] Monitoreo y analytics (Google Analytics, Vercel Analytics)

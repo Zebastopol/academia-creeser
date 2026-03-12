@@ -79,7 +79,7 @@ Se ha creado exitosamente la **plataforma web moderna** para el Club Deportivo C
 
 ### Iniciar el Servidor
 ```bash
-cd creeser-club
+cd academia-creeser
 npm run dev
 ```
 
