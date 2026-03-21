@@ -194,6 +194,81 @@ export const mockUsers = [
   }
 ];
 
+export const faqs = [
+  {
+    id: 1,
+    category: "General",
+    question: "¿Qué es la Academia Creeser?",
+    answer: "Academia Creeser es un club deportivo especializado en Taekwondo que utiliza la metodología comprensiva para desarrollar habilidades físicas, emocionales y sociales. Nuestro lema es 'Creer, Crecer y Ser'."
+  },
+  {
+    id: 2,
+    category: "General",
+    question: "¿Desde qué edad pueden ingresar los niños?",
+    answer: "Recibimos niños desde los 3 años en nuestro programa Baby Taekwondo. Tenemos programas adaptados para cada rango etario: Baby (3-5), Kids (5-8), Cadetes (8-14) y Adultos (15+)."
+  },
+  {
+    id: 3,
+    category: "General",
+    question: "¿Necesito experiencia previa en artes marciales?",
+    answer: "No, todos nuestros programas están diseñados para recibir principiantes. Nuestros instructores adaptan las clases para que cada alumno avance a su propio ritmo."
+  },
+  {
+    id: 4,
+    category: "Horarios y Sedes",
+    question: "¿Dónde se ubican las sedes?",
+    answer: "Contamos con dos sedes: La Reina (Palmas de Mallorca 673) y Ñuñoa (Tegualda 1566). Cada sede tiene horarios específicos según el programa."
+  },
+  {
+    id: 5,
+    category: "Horarios y Sedes",
+    question: "¿Cuáles son los horarios de clase?",
+    answer: "Los horarios varían según el programa y la sede. Baby Taekwondo: Lunes 17:00-17:40 (Ñuñoa). Kids: Martes y Jueves 17:30-18:40 (La Reina). Cadetes: Lunes y Miércoles 18:00-19:00 (Ñuñoa), Martes y Jueves 18:40-19:40 (La Reina). Adultos: Martes y Jueves 19:40-20:40 (La Reina)."
+  },
+  {
+    id: 6,
+    category: "Precios y Pagos",
+    question: "¿Cuánto cuesta la mensualidad?",
+    answer: "El plan de 1 vez por semana tiene un valor de $30.000 mensuales. El plan de 2 veces por semana cuesta $40.000, con precio promocional de $35.000 si pagas antes del día 5 de cada mes."
+  },
+  {
+    id: 7,
+    category: "Precios y Pagos",
+    question: "¿Existe matrícula o costo de inscripción?",
+    answer: "Sí, la matrícula anual tiene un valor de $12.000. Es un pago único que cubre el año completo."
+  },
+  {
+    id: 8,
+    category: "Precios y Pagos",
+    question: "¿Hay descuentos familiares?",
+    answer: "Sí, ofrecemos un 20% de descuento familiar cuando se inscriben dos o más integrantes del mismo grupo familiar."
+  },
+  {
+    id: 9,
+    category: "Equipamiento",
+    question: "¿Qué necesito para empezar?",
+    answer: "Para las primeras clases solo necesitas ropa deportiva cómoda. El dobok (uniforme de Taekwondo) se puede adquirir una vez que el alumno decida continuar con las clases."
+  },
+  {
+    id: 10,
+    category: "Equipamiento",
+    question: "¿Dónde puedo comprar el dobok y las protecciones?",
+    answer: "La academia puede orientarte sobre dónde adquirir el equipamiento necesario. Consulta directamente con el profesor Rodrigo para recomendaciones."
+  },
+  {
+    id: 11,
+    category: "Clases",
+    question: "¿Puedo tomar una clase de prueba?",
+    answer: "¡Por supuesto! Ofrecemos una clase de prueba gratuita para que conozcas nuestra metodología y el ambiente de la academia. Contáctanos para coordinar tu visita."
+  },
+  {
+    id: 12,
+    category: "Clases",
+    question: "¿Qué pasa si mi hijo no se adapta?",
+    answer: "Nuestro enfoque comprensivo está diseñado para que cada niño encuentre su ritmo. El profesor Rodrigo trabaja de forma personalizada con cada alumno. Si después del primer mes no se adapta, evaluamos juntos las opciones."
+  }
+];
+
 export const mockBookings = [
   { id: 1, userId: 2, classId: 3, date: "2024-06-10", time: "18:40", location: "La Reina", status: "confirmed" }
 ];

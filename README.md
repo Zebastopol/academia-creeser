@@ -173,9 +173,9 @@ La aplicación está optimizada para:
 
 ## 🔄 Estado del Proyecto
 
-**Versión:** 1.0.0 (Fase 1 - Frontend Completo)
+**Versión:** 1.1.0 (Fase 6 - Páginas Públicas Completas)
 **Estado:** ✅ LISTO PARA DEPLOYMENT
-**Última Actualización:** 2024
+**Última Actualización:** 21-03-2026
 
 ### 🌐 URLs del Proyecto
 - **Desarrollo:** http://localhost:5173
@@ -248,12 +248,12 @@ npm run build
 - [x] Dashboard básico
 - [x] Build de producción
 - [x] Testing completo
+- [x] Páginas públicas (Clases, Eventos, Membresías, About, Contacto, FAQ)
 
 ### 🚧 En Desarrollo
-- [ ] Páginas públicas restantes
 - [ ] Sistema de agendamiento
-- [ ] Panel de administración
 - [ ] Perfil de usuario completo
+- [ ] Panel de administración
 
 ### 📋 Planificado
 - [ ] Backend API

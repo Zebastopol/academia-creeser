@@ -21,6 +21,8 @@ import Memberships from './pages/Memberships';
 import Events from './pages/Events';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import EventDetail from './pages/EventDetail';
+import FAQ from './pages/FAQ';
 import Profile from './pages/user/Profile';
 import Bookings from './pages/user/Bookings';
 import NotFound from './pages/NotFound';
@@ -35,8 +37,10 @@ function AppRoutes() {
         <Route path="/clases/:id" element={<MainLayout><ClassDetail /></MainLayout>} />
         <Route path="/membresias" element={<MainLayout><Memberships /></MainLayout>} />
         <Route path="/eventos" element={<MainLayout><Events /></MainLayout>} />
+        <Route path="/eventos/:id" element={<MainLayout><EventDetail /></MainLayout>} />
         <Route path="/nosotros" element={<MainLayout><About /></MainLayout>} />
         <Route path="/contacto" element={<MainLayout><Contact /></MainLayout>} />
+        <Route path="/faq" element={<MainLayout><FAQ /></MainLayout>} />
 
         {/* Auth Routes with AuthLayout */}
         <Route

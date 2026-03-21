@@ -1,4 +1,4 @@
-# 📋 TODO - Club Deportivo Creeser
+# 📋 TODO - Academia Creeser
 
 ## ✅ Completado
 
@@ -36,17 +36,21 @@
 
 ---
 
-## 🚧 En Progreso
+## ✅ Completado (cont.)
 
-### Fase 6: Páginas Públicas Restantes
-- [ ] Crear página de Clases (lista completa)
-- [ ] Crear página de detalle de Clase
-- [ ] Crear página de Membresías
-- [ ] Crear página de Eventos
-- [ ] Crear página de detalle de Evento
-- [ ] Crear página Nosotros (About)
-- [ ] Crear página de Contacto con formulario
-- [ ] Crear página de FAQ
+### Fase 6: Páginas Públicas Restantes ✅ COMPLETADO (21-03-2026)
+- [x] Crear página de Clases (lista completa con filtros por sede)
+- [x] Crear página de detalle de Clase
+- [x] Crear página de Membresías (planes, beneficios, FAQ de planes)
+- [x] Crear página de Eventos (listado completo)
+- [x] Crear página de detalle de Evento
+- [x] Crear página Nosotros (historia, misión, visión, valores, instructor, sedes)
+- [x] Crear página de Contacto con formulario (useContactForm + ContactForm)
+- [x] Crear página de FAQ (acordeón con búsqueda y filtros por categoría)
+
+---
+
+## 🚧 En Progreso
 
 ### Fase 7: Sistema de Agendamiento
 - [ ] Crear componente de Calendario
@@ -159,10 +163,9 @@
 - Date-fns
 
 ### Próximos Pasos Inmediatos
-1. Probar la aplicación actual
-2. Crear las páginas públicas restantes
-3. Implementar el sistema de agendamiento
-4. Desarrollar el panel de administración
+1. Implementar el sistema de agendamiento (Fase 7)
+2. Completar perfil de usuario (Fase 8)
+3. Desarrollar el panel de administración (Fase 9)
 
 ### Mejoras Futuras
 - Modo oscuro
