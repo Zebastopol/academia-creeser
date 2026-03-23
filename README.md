@@ -23,10 +23,17 @@ Plataforma web moderna para el Club Deportivo Creeser, especializado en Taekwond
 
 - **Dashboard de Usuario**
   - Vista personalizada según rol
-  - Estadísticas de progreso
+  - Estadísticas de progreso en tiempo real
   - Clases agendadas
   - Historial de asistencia
   - Gestión de perfil
+
+- **Perfil de Usuario** ✅
+  - Edición de datos personales con validaciones
+  - Cambio de contraseña con indicador de fortaleza
+  - Historial cronológico de clases con filtros
+  - Sistema de logros y gamificación
+  - Barras de progreso de cinturón y asistencia
 
 - **Sistema de Agendamiento** ✅
   - Calendario interactivo mensual (grilla 5x7)
@@ -175,7 +182,7 @@ La aplicación está optimizada para:
 
 ## 🔄 Estado del Proyecto
 
-**Versión:** 1.2.0 (Fase 7 - Sistema de Agendamiento)
+**Versión:** 1.3.0 (Fase 8 - Perfil de Usuario)
 **Estado:** ✅ LISTO PARA DEPLOYMENT
 **Última Actualización:** 23-03-2026
 
@@ -254,7 +261,7 @@ npm run build
 
 ### 🚧 En Desarrollo
 - [x] Sistema de agendamiento ✅
-- [ ] Perfil de usuario completo
+- [x] Perfil de usuario completo ✅
 - [ ] Panel de administración
 
 ### 📋 Planificado

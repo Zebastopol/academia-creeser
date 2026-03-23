@@ -78,14 +78,39 @@
 
 ---
 
-## 🚧 En Progreso
+## ✅ Completado (cont.)
 
-### Fase 8: Perfil de Usuario
-- [ ] Crear página de Perfil completa
-- [ ] Implementar edición de datos personales
-- [ ] Implementar cambio de contraseña
-- [ ] Mostrar historial de clases
-- [ ] Mostrar progreso y logros
+### Fase 8: Perfil de Usuario ✅ COMPLETADO (23-03-2026)
+- [x] Crear página de Perfil completa (ProfileTemplate con tabs navegables)
+- [x] Implementar edición de datos personales (PersonalInfoForm + validaciones + toast)
+- [x] Implementar cambio de contraseña (ChangePasswordForm + indicador de fortaleza)
+- [x] Mostrar historial de clases (ClassHistoryList con filtros, vinculado a bookingService)
+- [x] Mostrar progreso y logros (AchievementsGrid + ProgressOverview + gamificación)
+
+**Archivos creados/refactorizados:**
+- `features/user-profile/constants/profileConstants.js` — BELT_PROGRESSION, ACHIEVEMENTS_CATALOG, PASSWORD_RULES
+- `features/user-profile/services/profileService.js` — Service completo (Open/Closed, consume bookingService)
+- `features/user-profile/hooks/useProfile.js` — Form state, validación, submit con toast
+- `features/user-profile/hooks/useChangePassword.js` — Flujo de cambio de password con strength meter
+- `features/user-profile/hooks/useClassHistory.js` — Historial con filtrado por estado
+- `features/user-profile/hooks/useAchievements.js` — Logros y stats de progreso
+- `features/user-profile/components/ProfileHeader.jsx` — Atom: avatar, cinturón, datos de contacto
+- `features/user-profile/components/PersonalInfoForm.jsx` — Organism: formulario editable
+- `features/user-profile/components/ChangePasswordForm.jsx` — Organism: cambio de password con UX
+- `features/user-profile/components/ClassHistoryItem.jsx` — Molecule: item de historial
+- `features/user-profile/components/ClassHistoryList.jsx` — Organism: lista con filtros
+- `features/user-profile/components/AchievementCard.jsx` — Molecule: tarjeta de logro
+- `features/user-profile/components/AchievementsGrid.jsx` — Organism: grid de logros
+- `features/user-profile/components/ProgressOverview.jsx` — Organism: barras de progreso y stats
+- `features/user-profile/components/ProfileTemplate.jsx` — Template: ensamblaje con 4 tabs
+- `pages/user/Profile.jsx` — Reescrito: solo ensambla ProfileTemplate
+- `features/dashboard/components/ProgressCard.jsx` — Refactorizado: datos reales vía useAchievements
+- `features/bookings/services/bookingService.js` — Extendido: getUserBookingHistory (Open/Closed)
+- `shared/data/mockData.js` — Extendido: campos de usuario + 45 bookings históricas
+
+---
+
+## 🚧 En Progreso
 
 ### Fase 9: Panel de Administración
 - [ ] Crear Dashboard de Admin
@@ -185,7 +210,7 @@
 
 ### Próximos Pasos Inmediatos
 1. ~~Implementar el sistema de agendamiento (Fase 7)~~ ✅
-2. Completar perfil de usuario (Fase 8)
+2. ~~Completar perfil de usuario (Fase 8)~~ ✅
 3. Desarrollar el panel de administración (Fase 9)
 
 ### Mejoras Futuras

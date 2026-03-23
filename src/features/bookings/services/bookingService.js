@@ -247,6 +247,28 @@ export const bookingService = {
   },
 
   /**
+   * Retorna TODAS las reservas de un usuario (sin filtrar canceladas),
+   * enriquecidas con datos de la clase. Uso principal: historial del perfil.
+   * @param {number} userId
+   * @returns {Promise<Array>}
+   */
+  async getUserBookingHistory(userId) {
+    await sleep();
+    return mockBookings
+      .filter(b => b.userId === userId)
+      .map(booking => {
+        const classInfo = classes.find(c => c.id === booking.classId);
+        return {
+          ...booking,
+          className: classInfo?.name,
+          instructor: classInfo?.instructor,
+          ageGroup: classInfo?.ageGroup,
+        };
+      })
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
+  },
+
+  /**
    * Genera un ID único y determinista para un slot.
    * @param {number} classId
    * @param {string} location
