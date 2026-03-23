@@ -28,11 +28,13 @@ Plataforma web moderna para el Club Deportivo Creeser, especializado en Taekwond
   - Historial de asistencia
   - Gestión de perfil
 
-- **Sistema de Agendamiento** (En desarrollo)
-  - Calendario interactivo
-  - Reserva de clases
-  - Confirmación automática
-  - Gestión de cupos
+- **Sistema de Agendamiento** ✅
+  - Calendario interactivo mensual (grilla 5x7)
+  - Filtros mandatorios por sede y clase
+  - Selección múltiple con persistencia de sesión
+  - Confirmación batch de reservas
+  - Sistema de cancelación
+  - Preparado para Google Calendar API
 
 - **Panel de Administración** (En desarrollo)
   - Gestión de usuarios (CRUD)
@@ -173,9 +175,9 @@ La aplicación está optimizada para:
 
 ## 🔄 Estado del Proyecto
 
-**Versión:** 1.1.0 (Fase 6 - Páginas Públicas Completas)
+**Versión:** 1.2.0 (Fase 7 - Sistema de Agendamiento)
 **Estado:** ✅ LISTO PARA DEPLOYMENT
-**Última Actualización:** 21-03-2026
+**Última Actualización:** 23-03-2026
 
 ### 🌐 URLs del Proyecto
 - **Desarrollo:** http://localhost:5173
@@ -251,7 +253,7 @@ npm run build
 - [x] Páginas públicas (Clases, Eventos, Membresías, About, Contacto, FAQ)
 
 ### 🚧 En Desarrollo
-- [ ] Sistema de agendamiento
+- [x] Sistema de agendamiento ✅
 - [ ] Perfil de usuario completo
 - [ ] Panel de administración
 
@@ -301,12 +303,12 @@ npm run build
 
 ## 📄 Licencia
 
-Este proyecto es privado y pertenece al Club Deportivo Creeser.
+Este proyecto es privado y pertenece a Academia Deportiva Creeser.
 
 ## 👥 Equipo
 
 - **Desarrollo**: Zebastopol
-- **Cliente**: Club Deportivo Creeser
+- **Cliente**: Academia Creeser
 
 ## 📞 Contacto
 

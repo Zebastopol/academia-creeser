@@ -63,6 +63,14 @@ Se ha creado exitosamente la **plataforma web moderna** para el Club Deportivo C
   - Acciones rápidas
   - Progreso de cinturón
 
+- ✅ **Agendamiento** (`/agendar`): Sistema completo de reservas con:
+  - Filtros mandatorios por sede (La Reina, Ñuñoa) y clase (Baby TKD, Kids, Cadetes, Adultos)
+  - Calendario interactivo mensual con navegación
+  - Slots con 4 estados visuales (disponible, seleccionado, reservado, sin cupo)
+  - Selección múltiple con persistencia en sessionStorage
+  - Resumen lateral con confirmación batch
+  - Redirección inteligente desde ClassDetail (auth-aware)
+
 ### 5. **Sistema de Autenticación** 🔐
 - ✅ Context API para gestión de estado
 - ✅ Login/Logout funcional
@@ -253,14 +261,14 @@ http://localhost:5173
 
 ## 📊 Métricas del Proyecto
 
-- **Líneas de código**: ~5,000+
-- **Componentes**: 25+
+- **Líneas de código**: ~6,500+
+- **Componentes**: 35+
 - **Páginas**: 13 (todas funcionales)
 - **Features**: 7 módulos (auth, home, classes, events, memberships, bookings, contact)
 - **Tecnologías**: 12+
 - **Responsive**: 100%
 - **Accesibilidad**: Buena (mejorable)
-- **Última actualización**: 21-03-2026 (Fase 6 completada)
+- **Última actualización**: 23-03-2026 (Fase 7 completada — Sistema de Agendamiento)
 
 ---
 
@@ -328,4 +336,4 @@ El proyecto está **100% funcional** y listo para:
 
 **Desarrollado con dedicacion y profesionalismo**  
 **Tecnología: React + Vite + Tailwind CSS**  
-**Última actualización: 21-03-2026 (Fase 6 completada)**
+**Última actualización: 23-03-2026 (Fase 7 completada — Sistema de Agendamiento)**

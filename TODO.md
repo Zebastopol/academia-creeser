@@ -50,14 +50,35 @@
 
 ---
 
-## 🚧 En Progreso
+## ✅ Completado (cont.)
 
-### Fase 7: Sistema de Agendamiento
-- [ ] Crear componente de Calendario
-- [ ] Crear página de Agendamiento de Clases
-- [ ] Implementar lógica de disponibilidad
-- [ ] Implementar confirmación de reservas
-- [ ] Crear sistema de cancelación
+### Fase 7: Sistema de Agendamiento ✅ COMPLETADO (23-03-2026)
+- [x] Crear componente de Calendario (BookingCalendar, CalendarCell, CalendarHeader)
+- [x] Crear página de Agendamiento de Clases (Bookings.jsx con filtros + calendario + resumen)
+- [x] Implementar lógica de disponibilidad (bookingService.getMonthSlots con estados)
+- [x] Implementar confirmación de reservas (BookingSummary batch + sessionStorage)
+- [x] Crear sistema de cancelación (bookingService.cancelBooking + useBookings)
+
+**Archivos creados/refactorizados:**
+- `features/bookings/constants/bookingConstants.js` — Estados, mapas de días, configuración
+- `features/bookings/services/bookingService.js` — Service completo (Open/Closed)
+- `features/bookings/hooks/useBookingCalendar.js` — Navegación mensual, grilla 5x7
+- `features/bookings/hooks/useBookings.js` — Multi-select con sessionStorage, cancelación
+- `features/bookings/hooks/useGoogleCalendar.js` — Stub para futura integración
+- `features/bookings/components/CalendarCell.jsx` — Atom: celda del día
+- `features/bookings/components/CalendarHeader.jsx` — Molecule: navegación mes
+- `features/bookings/components/SlotCard.jsx` — Atom: slot con 4 estados visuales
+- `features/bookings/components/BookingFilters.jsx` — Molecule: filtros sede + clase
+- `features/bookings/components/BookingCalendar.jsx` — Organism: grilla completa
+- `features/bookings/components/BookingSummary.jsx` — Organism: resumen multi-select
+- `features/bookings/components/LocationSelector.jsx` — Refactorizado (props, Open/Closed)
+- `features/bookings/components/BookingConfirmation.jsx` — Refactorizado (batch)
+- `pages/user/Bookings.jsx` — Reescrito: filtros → calendario → checkout
+- `pages/ClassDetail.jsx` — Redirección auth-aware
+
+---
+
+## 🚧 En Progreso
 
 ### Fase 8: Perfil de Usuario
 - [ ] Crear página de Perfil completa
@@ -163,7 +184,7 @@
 - Date-fns
 
 ### Próximos Pasos Inmediatos
-1. Implementar el sistema de agendamiento (Fase 7)
+1. ~~Implementar el sistema de agendamiento (Fase 7)~~ ✅
 2. Completar perfil de usuario (Fase 8)
 3. Desarrollar el panel de administración (Fase 9)
 

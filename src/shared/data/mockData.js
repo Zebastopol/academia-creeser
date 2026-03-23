@@ -19,7 +19,7 @@ export const academiaInfo = {
     email: "espaciocreeser.contacto@gmail.com",
     instagram: "@creesertkd",
     instagramUrl: "https://www.instagram.com/creesertkd/",
-    availability: "24/7"
+    availability: "Lun a Vie 09:00 - 18:00"
   },
   locations: [
     { name: "La Reina", address: "Palmas de Mallorca 673" },
