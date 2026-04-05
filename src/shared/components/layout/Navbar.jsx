@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaUser, FaSignOutAlt, FaTachometerAlt } from 'react-icons/fa';
+import { FaBars, FaTimes, FaUser, FaSignOutAlt, FaTachometerAlt, FaCog, FaChalkboardTeacher } from 'react-icons/fa';
 import { GiKimono } from 'react-icons/gi';
 import { Menu, Transition } from '@headlessui/react';
 import { useAuth } from '../../../features/auth/context/AuthContext';
@@ -13,7 +13,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, logout, isAuthenticated } = useAuth();
+  const { user, logout, isAuthenticated, isAdmin, isInstructor } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -137,6 +137,26 @@ const Navbar = () => {
                         </Link>
                       )}
                     </Menu.Item>
+                    {isAdmin && (
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link to="/admin" className={cn('flex items-center space-x-2 px-4 py-2 transition-colors', active ? 'bg-gray-100 text-primary-600' : 'text-gray-700')}>
+                            <FaCog />
+                            <span>Panel Admin</span>
+                          </Link>
+                        )}
+                      </Menu.Item>
+                    )}
+                    {(isInstructor || isAdmin) && (
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link to="/instructor" className={cn('flex items-center space-x-2 px-4 py-2 transition-colors', active ? 'bg-gray-100 text-primary-600' : 'text-gray-700')}>
+                            <FaChalkboardTeacher />
+                            <span>Panel Instructor</span>
+                          </Link>
+                        )}
+                      </Menu.Item>
+                    )}
                     <hr className="my-2 border-gray-100" />
                     <Menu.Item>
                       {({ active }) => (
@@ -206,6 +226,18 @@ const Navbar = () => {
                       <FaTachometerAlt className="text-primary-600" />
                       <span>Dashboard</span>
                     </Link>
+                    {isAdmin && (
+                      <Link to="/admin" className="block py-3 text-gray-700 font-medium flex items-center space-x-2">
+                        <FaCog className="text-primary-600" />
+                        <span>Panel Admin</span>
+                      </Link>
+                    )}
+                    {(isInstructor || isAdmin) && (
+                      <Link to="/instructor" className="block py-3 text-gray-700 font-medium flex items-center space-x-2">
+                        <FaChalkboardTeacher className="text-primary-600" />
+                        <span>Panel Instructor</span>
+                      </Link>
+                    )}
                     <button onClick={handleLogout} className="block w-full text-left py-3 text-red-600 font-medium flex items-center space-x-2">
                       <FaSignOutAlt />
                       <span>Cerrar Sesión</span>

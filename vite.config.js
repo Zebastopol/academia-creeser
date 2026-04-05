@@ -9,9 +9,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Separar vendors grandes en chunks
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'ui-vendor': ['framer-motion', 'react-icons', 'react-toastify'],
+          'charts-vendor': ['recharts'],
+          'calendar-vendor': ['react-big-calendar'],
         },
       },
     },

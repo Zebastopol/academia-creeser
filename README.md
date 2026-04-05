@@ -43,12 +43,26 @@ Plataforma web moderna para el Club Deportivo Creeser, especializado en Taekwond
   - Sistema de cancelación
   - Preparado para Google Calendar API
 
-- **Panel de Administración** (En desarrollo)
-  - Gestión de usuarios (CRUD)
-  - Gestión de clases (CRUD)
-  - Gestión de eventos (CRUD)
-  - Reportes y estadísticas
-  - Sistema de reservas
+- **Panel de Administración** ✅
+  - Dashboard con KPIs: marketing, ingresos, contactos
+  - Calendario académico (React Big Calendar) con programas, exámenes, competencias
+  - Gestión de usuarios (CRUD + métricas por alumno)
+  - Gestión de clases (CRUD con horarios dinámicos)
+  - Gestión de eventos (CRUD completo)
+  - Gestión global de reservas (filtros, edición, cancelación)
+  - Reportes de asistencia y popularidad (Recharts)
+  - Protección de rutas por rol (AdminRoute)
+
+- **Panel de Instructor** ✅
+  - Dashboard con KPIs: alumnos activos, clases asignadas, asistencia mensual
+  - Horario semanal visual con clases del día
+  - Vista de clases asignadas con estadísticas por clase
+  - Lista de alumnos por clase con métricas de asistencia y cinturón
+  - Sistema de marcaje de asistencia (present/absent/late) con batch save
+  - Historial de asistencia por clase
+  - Reportes de progreso por alumno (timeline + gráficos) y por clase (tendencias)
+  - Notas de progreso con categorías (técnica, actitud, físico, general)
+  - Protección de rutas por rol (InstructorRoute)
 
 ## 🛠️ Tecnologías
 
@@ -60,6 +74,8 @@ Plataforma web moderna para el Club Deportivo Creeser, especializado en Taekwond
 - **React Router DOM** - Navegación
 - **React Icons** - Iconos
 - **React Toastify** - Notificaciones
+- **Recharts** - Gráficos y visualización de datos
+- **React Big Calendar** - Calendario académico interactivo
 - **Axios** - Cliente HTTP
 - **Date-fns** - Manejo de fechas
 
@@ -182,9 +198,9 @@ La aplicación está optimizada para:
 
 ## 🔄 Estado del Proyecto
 
-**Versión:** 1.3.0 (Fase 8 - Perfil de Usuario)
+**Versión:** 1.5.0 (Fase 10 - Panel de Instructor)
 **Estado:** ✅ LISTO PARA DEPLOYMENT
-**Última Actualización:** 23-03-2026
+**Última Actualización:** 02-04-2026
 
 ### 🌐 URLs del Proyecto
 - **Desarrollo:** http://localhost:5173
@@ -262,7 +278,8 @@ npm run build
 ### 🚧 En Desarrollo
 - [x] Sistema de agendamiento ✅
 - [x] Perfil de usuario completo ✅
-- [ ] Panel de administración
+- [x] Panel de administración ✅
+- [x] Panel de instructor ✅
 
 ### 📋 Planificado
 - [ ] Backend API
