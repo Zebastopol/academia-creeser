@@ -15,6 +15,7 @@ export const useProfile = () => {
     email: user?.email || '',
     phone: user?.phone || '',
     birthDate: user?.birthDate || '',
+    tutorName: user?.tutorName || '',
     emergencyContactName: user?.emergencyContact?.name || '',
     emergencyContactPhone: user?.emergencyContact?.phone || '',
   }));
@@ -30,6 +31,7 @@ export const useProfile = () => {
       email: user?.email || '',
       phone: user?.phone || '',
       birthDate: user?.birthDate || '',
+      tutorName: user?.tutorName || '',
       emergencyContactName: user?.emergencyContact?.name || '',
       emergencyContactPhone: user?.emergencyContact?.phone || '',
     });
@@ -64,6 +66,7 @@ export const useProfile = () => {
         email: formData.email.trim(),
         phone: formData.phone.trim(),
         birthDate: formData.birthDate,
+        tutorName: formData.tutorName.trim(),
         emergencyContact: {
           name: formData.emergencyContactName.trim(),
           phone: formData.emergencyContactPhone.trim(),

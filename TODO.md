@@ -177,6 +177,43 @@
 - `shared/constants/statusConstants.js` — Constantes de estado compartidas
 - `pages/instructor/` — 5 páginas (Dashboard, Classes, Students, Attendance, Reports)
 
+### Mejoras Dashboard y Portal de Pagos ✅ COMPLETADO (06-04-2026)
+- [x] RF-01: Bloque de Membresía en Dashboard de Usuario (MembershipBlock.jsx)
+- [x] RF-02: Página de Pagos — Listado mensual anual (MonthlyPaymentList, MonthlyPaymentCard)
+- [x] RF-03: Página de Pagos — Detalle del mes (MonthDetail con logros, asistencia, totales)
+- [x] RF-04: Portal de Pagos con arquitectura Open/Closed (TransferPayment, CardRegistration, WebPayPlaceholder)
+- [x] RF-05/RF-08: Botón "Métricas" condicional por rol en Dashboard y Perfil
+- [x] RF-06: Campo tutorName en PersonalInfoForm, useProfile y profileService
+- [x] RF-07: CheckoutHistoryList con DataTable + nueva tab "Pagos" en ProfileTemplate
+
+**Archivos creados:**
+- `features/checkout/constants/checkoutConstants.js` — PAYMENT_STATUS_MAP, PAYMENT_METHODS_REGISTRY, MONTH_LABELS, ENROLLMENT_FEE
+- `features/checkout/services/checkoutService.js` — getAnnualPayments, getMonthDetail, getBankData, getPaymentHistory, getCurrentMonthPaymentStatus
+- `features/checkout/hooks/useCheckout.js` — Estado del listado anual, mes seleccionado, detalle
+- `features/checkout/hooks/useCheckoutHistory.js` — Historial de pagos del usuario
+- `features/checkout/components/MembershipBlock.jsx` — Bloque membresía para Dashboard (tipo, estado, CTA)
+- `features/checkout/components/MonthlyPaymentCard.jsx` — Card individual de un mes
+- `features/checkout/components/MonthlyPaymentList.jsx` — Grid de 12 meses
+- `features/checkout/components/MonthDetail.jsx` — Detalle expandido (membresía, asistencia, logros, total)
+- `features/checkout/components/PaymentMethodSelector.jsx` — Selector Open/Closed con registro dinámico
+- `features/checkout/components/methods/TransferPayment.jsx` — Datos bancarios con copiar al portapapeles
+- `features/checkout/components/methods/CardRegistration.jsx` — Formulario placeholder de inscripción de tarjeta
+- `features/checkout/components/methods/WebPayPlaceholder.jsx` — Componente "Próximamente"
+- `features/checkout/components/CheckoutHistoryList.jsx` — Tabla de historial de pagos con DataTable
+- `features/checkout/templates/CheckoutTemplate.jsx` — Ensambla listado + detalle + portal de pago
+- `pages/user/Checkout.jsx` — Página envoltorio
+
+**Archivos modificados:**
+- `shared/data/mockData.js` — mockBankData, mockPayments (27 registros), tutorName en mockUsers
+- `shared/components/molecules/StatusBadge.jsx` — Estilos para paid/overdue
+- `App.jsx` — Ruta /pagos con ProtectedRoute + MainLayout
+- `pages/user/Dashboard.jsx` — MembershipBlock en sidebar + botón Métricas por rol
+- `features/user-profile/components/ProfileHeader.jsx` — Botón Métricas por rol
+- `features/user-profile/components/PersonalInfoForm.jsx` — Campo tutorName
+- `features/user-profile/hooks/useProfile.js` — tutorName en formData, resetForm, payload
+- `features/user-profile/services/profileService.js` — tutorName en allowedFields
+- `features/user-profile/components/ProfileTemplate.jsx` — Nueva tab "Pagos" con CheckoutHistoryList
+
 ### Fase 11: Componentes Adicionales
 - [ ] Crear componente de Loading
 - [ ] Crear componente de Error
@@ -262,7 +299,8 @@
 2. ~~Completar perfil de usuario (Fase 8)~~ ✅
 3. ~~Desarrollar el panel de administración (Fase 9)~~ ✅
 4. ~~Desarrollar el panel de instructor (Fase 10)~~ ✅
-5. Componentes adicionales (Fase 11)
+5. ~~Portal de pagos y mejoras Dashboard/Perfil~~ ✅
+6. Componentes adicionales (Fase 11)
 
 ### Mejoras Futuras
 - Modo oscuro

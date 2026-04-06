@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { FaCalendar, FaTrophy, FaClock, FaChartLine } from 'react-icons/fa';
+import { FaCalendar, FaTrophy, FaClock, FaChartLine, } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaChartBar } from 'react-icons/fa';
 import { useAuth } from '../../features/auth/context/AuthContext';
 import { useBookings } from '../../features/bookings/hooks/useBookings';
 import { academiaInfo } from '../../shared/data/mockData';
@@ -8,10 +10,11 @@ import StatsGrid from '../../features/dashboard/components/StatsGrid';
 import UpcomingClasses from '../../features/dashboard/components/UpcomingClasses';
 import QuickActions from '../../features/dashboard/components/QuickActions';
 import ProgressCard from '../../features/dashboard/components/ProgressCard';
+import MembershipBlock from '../../features/checkout/components/MembershipBlock';
 import SEO from '../../shared/components/common/SEO';
 
 const Dashboard = () => {
-  const { user } = useAuth();
+  const { user, isAdmin, isInstructor } = useAuth();
   const { bookings, loading: bookingsLoading } = useBookings(user?.id);
 
   const stats = [
@@ -73,7 +76,15 @@ const Dashboard = () => {
                 </p>
               </div>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
+              {(isAdmin || isInstructor) && (
+                <Link
+                  to={isAdmin ? '/admin' : '/instructor'}
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-gold-500 text-black rounded-lg shadow hover:bg-gold-400 transition-all"
+                >
+                  <FaChartBar /> Métricas
+                </Link>
+              )}
               <Button
                 to="/perfil"
                 variant="outline"
@@ -111,6 +122,7 @@ const Dashboard = () => {
 
           {/* Sidebar Actions & Progress */}
           <aside className="space-y-6">
+            <MembershipBlock userId={user?.id} membership={user?.membership} />
             <QuickActions />
             <ProgressCard user={user} />
           </aside>

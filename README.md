@@ -64,6 +64,18 @@ Plataforma web moderna para el Club Deportivo Creeser, especializado en Taekwond
   - Notas de progreso con categorías (técnica, actitud, físico, general)
   - Protección de rutas por rol (InstructorRoute)
 
+- **Portal de Pagos** ✅
+  - Bloque de membresía en Dashboard con estado de pago mensual
+  - Listado anual de mensualidades con estados visuales (pagado/pendiente/vencido)
+  - Detalle expandido por mes (membresía, clases asistidas/no asistidas, logros, total)
+  - Selector de métodos de pago con arquitectura Open/Closed
+  - Transferencia bancaria con datos y copiar al portapapeles
+  - Inscripción de tarjeta (placeholder para integración futura)
+  - WebPay (placeholder "Próximamente")
+  - Historial de pagos en perfil de usuario (tab "Pagos")
+  - Botón "Métricas" condicional por rol en Dashboard y Perfil
+  - Campo "Nombre del tutor" en formulario de datos personales
+
 ## 🛠️ Tecnologías
 
 ### Frontend
@@ -198,9 +210,9 @@ La aplicación está optimizada para:
 
 ## 🔄 Estado del Proyecto
 
-**Versión:** 1.5.0 (Fase 10 - Panel de Instructor)
+**Versión:** 1.6.0 (Portal de Pagos + Mejoras Dashboard/Perfil)
 **Estado:** ✅ LISTO PARA DEPLOYMENT
-**Última Actualización:** 02-04-2026
+**Última Actualización:** 06-04-2026
 
 ### 🌐 URLs del Proyecto
 - **Desarrollo:** http://localhost:5173
@@ -280,11 +292,12 @@ npm run build
 - [x] Perfil de usuario completo ✅
 - [x] Panel de administración ✅
 - [x] Panel de instructor ✅
+- [x] Portal de pagos y mejoras Dashboard/Perfil ✅
 
 ### 📋 Planificado
 - [ ] Backend API
 - [ ] Base de datos
-- [ ] Sistema de pagos
+- [ ] Integración pasarela de pagos real
 - [ ] Notificaciones push
 - [ ] App móvil
 

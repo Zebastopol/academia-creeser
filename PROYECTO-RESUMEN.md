@@ -2,7 +2,7 @@
 
 ## 📊 Resumen Ejecutivo
 
-Se ha creado exitosamente la **plataforma web moderna** para el Club Deportivo Creeser, especializado en Taekwondo. El proyecto incluye un sitio web público completo, sistema de autenticación, sistema de agendamiento, perfil de usuario con gamificación, un **panel de administración completo** con dashboard de KPIs, CRUDs, calendario académico, gestión de reservas y reportes analytics, y un **panel de instructor** con dashboard de actividad, clases asignadas, lista de alumnos, sistema de marcaje de asistencia y reportes de progreso.
+Se ha creado exitosamente la **plataforma web moderna** para la  Academia Deportiva Creeser Taekwondo. El proyecto incluye un sitio web público completo, sistema de autenticación, sistema de agendamiento, perfil de usuario con gamificación, un **panel de administración completo** con dashboard de KPIs, CRUDs, calendario académico, gestión de reservas y reportes analytics, un **panel de instructor** con dashboard de actividad, clases asignadas, lista de alumnos, sistema de marcaje de asistencia y reportes de progreso, y un **portal de pagos** con listado anual de mensualidades, detalle por mes, selector de métodos de pago (Open/Closed), bloque de membresía en el dashboard, historial de pagos en el perfil, y botón de métricas por rol.
 
 ---
 
@@ -286,14 +286,14 @@ Accede a `/instructor` con credenciales de instructor para ver:
 
 ## 📊 Métricas del Proyecto
 
-- **Líneas de código**: ~12,000+
-- **Componentes**: 80+
-- **Páginas**: 24 (todas funcionales)
-- **Features**: 10 módulos (auth, home, classes, events, memberships, bookings, contact, user-profile, admin, instructor)
+- **Líneas de código**: ~13,500+
+- **Componentes**: 95+
+- **Páginas**: 25 (todas funcionales)
+- **Features**: 11 módulos (auth, home, classes, events, memberships, bookings, contact, user-profile, admin, instructor, checkout)
 - **Tecnologías**: 12+
 - **Responsive**: 100%
 - **Accesibilidad**: Buena (mejorable)
-- **Última actualización**: 02-04-2026 (Fase 10 completada — Panel de Instructor)
+- **Última actualización**: 06-04-2026 (Portal de Pagos + Mejoras Dashboard/Perfil)
 
 ---
 
@@ -361,4 +361,4 @@ El proyecto está **100% funcional** y listo para:
 
 **Desarrollado con dedicacion y profesionalismo**  
 **Tecnología: React + Vite + Tailwind CSS**  
-**Última actualización: 02-04-2026 (Fase 10 completada — Panel de Instructor)**
+**Última actualización: 06-04-2026 (Portal de Pagos + Mejoras Dashboard/Perfil)**

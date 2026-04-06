@@ -83,6 +83,22 @@ const PersonalInfoForm = () => {
             className={FIELD_BASE}
           />
         </div>
+
+        {/* Nombre del tutor */}
+        <div>
+          <label htmlFor="tutorName" className="block mb-1.5 text-sm font-medium text-gray-700">
+            Nombre del tutor o apoderado
+          </label>
+          <input
+            id="tutorName"
+            name="tutorName"
+            type="text"
+            value={formData.tutorName}
+            onChange={handleChange}
+            placeholder="Opcional — solo menores de edad"
+            className={FIELD_BASE}
+          />
+        </div>
       </div>
 
       {/* Contacto de emergencia */}

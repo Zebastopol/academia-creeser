@@ -13,6 +13,8 @@ const STATUS_STYLES = {
   new:       'bg-blue-100 text-blue-800',
   read:      'bg-yellow-100 text-yellow-800',
   replied:   'bg-green-100 text-green-800',
+  paid:      'bg-green-100 text-green-800',
+  overdue:   'bg-red-100 text-red-800',
 };
 
 const STATUS_LABELS = {
@@ -20,6 +22,7 @@ const STATUS_LABELS = {
   confirmed: 'Confirmada', cancelled: 'Cancelada', pending: 'Pendiente',
   present: 'Presente', absent: 'Ausente', late: 'Atraso',
   new: 'Nuevo', read: 'Leído', replied: 'Respondido',
+  paid: 'Pagado', overdue: 'Vencido',
 };
 
 /**

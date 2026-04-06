@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaCalendarAlt } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaCalendarAlt, FaChartBar } from 'react-icons/fa';
+import { useAuth } from '../../auth/context/AuthContext';
 
 /**
  * @param {{ user: object }} props
  */
 const ProfileHeader = ({ user }) => {
+  const { isAdmin, isInstructor } = useAuth();
   const joinLabel = user?.joinDate
     ? new Date(user.joinDate + 'T12:00:00').toLocaleDateString('es-CL', { year: 'numeric', month: 'long' })
     : null;
@@ -54,6 +57,15 @@ const ProfileHeader = ({ user }) => {
               </span>
             )}
           </div>
+
+          {(isAdmin || isInstructor) && (
+            <Link
+              to={isAdmin ? '/admin' : '/instructor'}
+              className="inline-flex items-center gap-2 mt-4 px-4 py-2 text-sm font-semibold bg-gold-500 text-black rounded-lg shadow hover:bg-gold-400 transition-all md:mt-0"
+            >
+              <FaChartBar /> Métricas
+            </Link>
+          )}
         </div>
       </div>
     </motion.section>

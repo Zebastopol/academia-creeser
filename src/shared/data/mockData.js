@@ -2,7 +2,7 @@
 
 export const academiaInfo = {
   name: "Academia Creeser",
-  clubName: "Club Deportivo Creeser",
+  clubName: "Academia Taekwondo Creeser",
   tagline: "Deporte con sentido",
   description: "Creeser surge tras la pregunta de cómo ayudar a nuestro hijo a navegar en un mundo tan rápido y cambiante con seguridad y confianza. Utilizamos la metodología comprensiva para crear un espacio donde 'Creer, Crecer y Ser' sean una realidad.",
   mission: "Llegar a la mayor cantidad de personas posibles e impactar en ellas de forma positiva, convirtiéndonos en aliados durante el desarrollo de tus hijos/as.",
@@ -213,6 +213,7 @@ export const mockUsers = [
     classIds: [],
     membership: null,
     achievements: [],
+    tutorName: "",
   },
   {
     id: 2,
@@ -230,6 +231,7 @@ export const mockUsers = [
     status: "active",
     classIds: [3, 4],
     achievements: ["first_class", "commitment", "dedication"],
+    tutorName: "María Silva",
   },
   {
     id: 3,
@@ -247,6 +249,7 @@ export const mockUsers = [
     membership: null,
     belt: "Cinturón Negro 3er Dan",
     achievements: [],
+    tutorName: "",
   },
   {
     id: 4,
@@ -264,6 +267,7 @@ export const mockUsers = [
     status: "active",
     classIds: [2],
     achievements: ["first_class"],
+    tutorName: "Carlos Rojas",
   },
   {
     id: 5,
@@ -281,6 +285,7 @@ export const mockUsers = [
     status: "active",
     classIds: [3],
     achievements: ["first_class", "commitment"],
+    tutorName: "Paula Lagos",
   },
   {
     id: 6,
@@ -297,6 +302,7 @@ export const mockUsers = [
     joinDate: "2026-01-15",
     status: "active",
     classIds: [1],
+    tutorName: "Roberto Méndez",
     achievements: ["first_class"],
   },
   {
@@ -315,6 +321,7 @@ export const mockUsers = [
     status: "active",
     classIds: [3, 4],
     achievements: ["first_class", "commitment", "dedication", "warrior"],
+    tutorName: "Laura Fuentes",
   },
   {
     id: 8,
@@ -332,6 +339,7 @@ export const mockUsers = [
     status: "active",
     classIds: [2],
     achievements: ["first_class", "commitment"],
+    tutorName: "Andrea Reyes",
   },
   {
     id: 9,
@@ -349,6 +357,7 @@ export const mockUsers = [
     status: "active",
     classIds: [4],
     achievements: ["first_class"],
+    tutorName: "",
   },
   {
     id: 10,
@@ -366,6 +375,7 @@ export const mockUsers = [
     status: "inactive",
     classIds: [3],
     achievements: ["first_class", "commitment"],
+    tutorName: "Miguel Ortiz",
   },
   {
     id: 11,
@@ -383,6 +393,7 @@ export const mockUsers = [
     status: "active",
     classIds: [3],
     achievements: ["first_class", "commitment", "dedication"],
+    tutorName: "Daniela Paredes",
   },
   {
     id: 12,
@@ -400,6 +411,7 @@ export const mockUsers = [
     status: "active",
     classIds: [1],
     achievements: [],
+    tutorName: "Javier Castro",
   }
 ];
 
@@ -738,6 +750,47 @@ export const mockRevenue = [
   { month: 4,  year: 2026, totalStudents: 10, byPlan: { "1x": 4, "2x": 6 }, revenue: 0,      projected: 330000 },
   { month: 5,  year: 2026, totalStudents: 0,  byPlan: { "1x": 0, "2x": 0 }, revenue: 0,      projected: 350000 },
   { month: 6,  year: 2026, totalStudents: 0,  byPlan: { "1x": 0, "2x": 0 }, revenue: 0,      projected: 360000 },
+];
+
+// --- DATOS DE PAGOS Y CHECKOUT ---
+
+export const mockBankData = {
+  bank: "Banco Estado",
+  accountType: "Cuenta Corriente",
+  accountNumber: "12345678",
+  rut: "77.123.456-7",
+  name: "Club Deportivo Creeser",
+  email: "pagos@creeser.cl",
+};
+
+export const mockPayments = [
+  { id: 1,  userId: 2,  month: 1,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-01-05T10:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 2,  userId: 2,  month: 2,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-02-04T09:30:00Z", membershipName: "2 veces x Semana" },
+  { id: 3,  userId: 2,  month: 3,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-03-03T11:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 4,  userId: 2,  month: 4,  year: 2026, amount: 35000, method: null,       status: "pending",  paidAt: null,                   membershipName: "2 veces x Semana" },
+  { id: 5,  userId: 4,  month: 1,  year: 2026, amount: 30000, method: "transfer", status: "paid",    paidAt: "2026-01-06T14:00:00Z", membershipName: "1 vez x Semana" },
+  { id: 6,  userId: 4,  month: 2,  year: 2026, amount: 30000, method: "transfer", status: "paid",    paidAt: "2026-02-05T10:00:00Z", membershipName: "1 vez x Semana" },
+  { id: 7,  userId: 4,  month: 3,  year: 2026, amount: 30000, method: null,       status: "overdue", paidAt: null,                   membershipName: "1 vez x Semana" },
+  { id: 8,  userId: 4,  month: 4,  year: 2026, amount: 30000, method: null,       status: "pending",  paidAt: null,                   membershipName: "1 vez x Semana" },
+  { id: 9,  userId: 5,  month: 1,  year: 2026, amount: 35000, method: "card",     status: "paid",    paidAt: "2026-01-04T08:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 10, userId: 5,  month: 2,  year: 2026, amount: 35000, method: "card",     status: "paid",    paidAt: "2026-02-03T08:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 11, userId: 5,  month: 3,  year: 2026, amount: 35000, method: "card",     status: "paid",    paidAt: "2026-03-04T08:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 12, userId: 5,  month: 4,  year: 2026, amount: 35000, method: null,       status: "pending",  paidAt: null,                   membershipName: "2 veces x Semana" },
+  { id: 13, userId: 7,  month: 1,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-01-05T12:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 14, userId: 7,  month: 2,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-02-05T12:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 15, userId: 7,  month: 3,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-03-05T12:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 16, userId: 7,  month: 4,  year: 2026, amount: 35000, method: null,       status: "pending",  paidAt: null,                   membershipName: "2 veces x Semana" },
+  { id: 17, userId: 8,  month: 1,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-01-06T09:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 18, userId: 8,  month: 2,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-02-06T09:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 19, userId: 8,  month: 3,  year: 2026, amount: 35000, method: null,       status: "overdue", paidAt: null,                   membershipName: "2 veces x Semana" },
+  { id: 20, userId: 8,  month: 4,  year: 2026, amount: 35000, method: null,       status: "pending",  paidAt: null,                   membershipName: "2 veces x Semana" },
+  { id: 21, userId: 9,  month: 2,  year: 2026, amount: 30000, method: "transfer", status: "paid",    paidAt: "2026-02-02T10:00:00Z", membershipName: "1 vez x Semana" },
+  { id: 22, userId: 9,  month: 3,  year: 2026, amount: 30000, method: "transfer", status: "paid",    paidAt: "2026-03-04T10:00:00Z", membershipName: "1 vez x Semana" },
+  { id: 23, userId: 9,  month: 4,  year: 2026, amount: 30000, method: null,       status: "pending",  paidAt: null,                   membershipName: "1 vez x Semana" },
+  { id: 24, userId: 11, month: 1,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-01-05T15:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 25, userId: 11, month: 2,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-02-04T15:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 26, userId: 11, month: 3,  year: 2026, amount: 35000, method: "transfer", status: "paid",    paidAt: "2026-03-05T15:00:00Z", membershipName: "2 veces x Semana" },
+  { id: 27, userId: 11, month: 4,  year: 2026, amount: 35000, method: null,       status: "pending",  paidAt: null,                   membershipName: "2 veces x Semana" },
 ];
 
 // --- DATOS EXTENDIDOS PARA INSTRUCTOR (Fase 10) ---

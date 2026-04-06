@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaUser, FaLock, FaHistory, FaTrophy } from 'react-icons/fa';
+import { FaUser, FaLock, FaHistory, FaTrophy, FaCreditCard } from 'react-icons/fa';
 import { useAuth } from '../../auth/context/AuthContext';
 import SEO from '../../../shared/components/common/SEO';
 import ProfileHeader from './ProfileHeader';
@@ -10,6 +10,7 @@ import ChangePasswordForm from './ChangePasswordForm';
 import ClassHistoryList from './ClassHistoryList';
 import AchievementsGrid from './AchievementsGrid';
 import ProgressOverview from './ProgressOverview';
+import CheckoutHistoryList from '../../checkout/components/CheckoutHistoryList';
 import { cn } from '../../../shared/utils/cn';
 
 const TABS = [
@@ -17,6 +18,7 @@ const TABS = [
   { id: 'security', label: 'Seguridad', icon: <FaLock /> },
   { id: 'history',  label: 'Historial', icon: <FaHistory /> },
   { id: 'achievements', label: 'Logros', icon: <FaTrophy /> },
+  { id: 'payments', label: 'Pagos', icon: <FaCreditCard /> },
 ];
 
 const TAB_PANELS = {
@@ -29,6 +31,7 @@ const TAB_PANELS = {
       <AchievementsGrid />
     </div>
   ),
+  payments: CheckoutHistoryList,
 };
 
 const ProfileTemplate = () => {

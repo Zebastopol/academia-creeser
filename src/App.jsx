@@ -32,6 +32,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/user/Dashboard';
 import Profile from './pages/user/Profile';
 import Bookings from './pages/user/Bookings';
+import Checkout from './pages/user/Checkout';
 
 // Admin Pages
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -85,6 +86,10 @@ function AppRoutes() {
         <Route
           path="/agendar"
           element={<ProtectedRoute><MainLayout><Bookings /></MainLayout></ProtectedRoute>}
+        />
+        <Route
+          path="/pagos"
+          element={<ProtectedRoute><MainLayout><Checkout /></MainLayout></ProtectedRoute>}
         />
 
         {/* Admin Routes with AdminLayout */}

@@ -50,7 +50,7 @@ export const profileService = {
    */
   async updatePersonalInfo(userId, data) {
     await sleep();
-    const allowedFields = ['name', 'email', 'phone', 'birthDate', 'emergencyContact', 'avatar'];
+    const allowedFields = ['name', 'email', 'phone', 'birthDate', 'tutorName', 'emergencyContact', 'avatar'];
     const sanitized = {};
     for (const key of allowedFields) {
       if (data[key] !== undefined) sanitized[key] = data[key];
