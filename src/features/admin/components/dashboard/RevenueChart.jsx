@@ -24,8 +24,8 @@ const RevenueChart = ({ revenue }) => {
         <AreaChart data={data}>
           <defs>
             <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#0c92eb" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="#0c92eb" stopOpacity={0} />
+              <stop offset="5%" stopColor="#714790" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#714790" stopOpacity={0} />
             </linearGradient>
             <linearGradient id="colorProjected" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.2} />
@@ -38,7 +38,7 @@ const RevenueChart = ({ revenue }) => {
           <Tooltip formatter={(val) => `$${val.toLocaleString('es-CL')}`} />
           <Legend />
           <Area type="monotone" dataKey="Proyectado" stroke="#f59e0b" fill="url(#colorProjected)" strokeDasharray="5 5" />
-          <Area type="monotone" dataKey="Ingresos" stroke="#0c92eb" fill="url(#colorRevenue)" strokeWidth={2} />
+          <Area type="monotone" dataKey="Ingresos" stroke="#714790" fill="url(#colorRevenue)" strokeWidth={2} />
         </AreaChart>
       </ResponsiveContainer>
 

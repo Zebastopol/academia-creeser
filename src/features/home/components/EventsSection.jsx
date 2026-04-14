@@ -1,23 +1,30 @@
-import { FaArrowRight } from 'react-icons/fa';
-import SectionHeading from '../../../shared/components/atoms/SectionHeading';
-import EventCard from './EventCard';
-import Button from '../../../shared/components/atoms/Button';
-import { useEvents } from '../../events/hooks/useEvents';
+import SectionHeading from '../../../shared/components/atoms/SectionHeading'
+import EventCard from './EventCard'
+import CTAButton from '../../../shared/components/atoms/CTAButton'
+import { FaArrowRight } from 'react-icons/fa'
+import { useEvents } from '../../events/hooks/useEvents'
 
 const EventsSection = () => {
-  const { events, loading } = useEvents(4);
+  const { events, loading } = useEvents(4)
 
-  if (loading) return null;
+  if (loading) {
+    return (
+      <section className="snap-section flex items-center justify-center" style={{ backgroundColor: 'var(--color-surface)' }}>
+        <div className="loading-spinner" />
+      </section>
+    )
+  }
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container-custom">
+    <section className="snap-section flex items-start" style={{ backgroundColor: 'var(--color-surface)' }}>
+      <div className="container-custom py-20 md:py-12">
         <SectionHeading
           title="Próximos Eventos"
           subtitle="Participa en nuestros eventos especiales y seminarios"
+          inverse
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {events.map((event, index) => (
             <EventCard
               key={event.id}
@@ -28,18 +35,13 @@ const EventsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button
-            to="/eventos"
-            variant="primary"
-            className="inline-flex items-center space-x-2"
-          >
-            <span>Ver Todos los Eventos</span>
-            <FaArrowRight />
-          </Button>
+          <CTAButton to="/eventos" variant="ghost" size="md">
+            Ver Todos los Eventos <FaArrowRight className="text-sm" />
+          </CTAButton>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default EventsSection;
+export default EventsSection

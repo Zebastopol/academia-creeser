@@ -35,7 +35,7 @@ const AcademicCalendar = ({ calendarEvents, onSelectEvent, onCreateEvent }) => {
     const typeInfo = CALENDAR_EVENT_TYPES[resource?.type];
     return {
       style: {
-        backgroundColor: resource?.color || typeInfo?.color || '#0c92eb',
+        backgroundColor: resource?.color || typeInfo?.color || '#714790',
         borderRadius: '6px',
         border: 'none',
         color: '#fff',

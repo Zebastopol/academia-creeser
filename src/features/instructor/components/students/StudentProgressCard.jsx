@@ -67,7 +67,7 @@ const StudentProgressCard = ({ student, isOpen, onClose, loading }) => {
           {student.notes && student.notes.length > 0 && (
             <div>
               <h4 className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                <FaStickyNote className="text-blue-500" /> Notas de Progreso
+                <FaStickyNote className="text-primary-500" /> Notas de Progreso
               </h4>
               <div className="space-y-2 max-h-48 overflow-y-auto">
                 {student.notes.map((note) => {

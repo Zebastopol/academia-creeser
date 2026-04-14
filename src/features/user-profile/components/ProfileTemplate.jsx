@@ -1,25 +1,23 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaUser, FaLock, FaHistory, FaTrophy, FaCreditCard } from 'react-icons/fa';
-import { useAuth } from '../../auth/context/AuthContext';
-import SEO from '../../../shared/components/common/SEO';
-import ProfileHeader from './ProfileHeader';
-import PersonalInfoForm from './PersonalInfoForm';
-import ChangePasswordForm from './ChangePasswordForm';
-import ClassHistoryList from './ClassHistoryList';
-import AchievementsGrid from './AchievementsGrid';
-import ProgressOverview from './ProgressOverview';
-import CheckoutHistoryList from '../../checkout/components/CheckoutHistoryList';
-import { cn } from '../../../shared/utils/cn';
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FaUser, FaLock, FaHistory, FaTrophy, FaCreditCard } from 'react-icons/fa'
+import { useAuth } from '../../auth/context/AuthContext'
+import SEO from '../../../shared/components/common/SEO'
+import ProfileHeader from './ProfileHeader'
+import PersonalInfoForm from './PersonalInfoForm'
+import ChangePasswordForm from './ChangePasswordForm'
+import ClassHistoryList from './ClassHistoryList'
+import AchievementsGrid from './AchievementsGrid'
+import ProgressOverview from './ProgressOverview'
+import CheckoutHistoryList from '../../checkout/components/CheckoutHistoryList'
 
 const TABS = [
   { id: 'personal', label: 'Datos Personales', icon: <FaUser /> },
   { id: 'security', label: 'Seguridad', icon: <FaLock /> },
-  { id: 'history',  label: 'Historial', icon: <FaHistory /> },
+  { id: 'history', label: 'Historial', icon: <FaHistory /> },
   { id: 'achievements', label: 'Logros', icon: <FaTrophy /> },
   { id: 'payments', label: 'Pagos', icon: <FaCreditCard /> },
-];
+]
 
 const TAB_PANELS = {
   personal: PersonalInfoForm,
@@ -32,29 +30,29 @@ const TAB_PANELS = {
     </div>
   ),
   payments: CheckoutHistoryList,
-};
+}
 
 const ProfileTemplate = () => {
-  const { user } = useAuth();
-  const [activeTab, setActiveTab] = useState('personal');
-  const ActivePanel = TAB_PANELS[activeTab];
+  const { user } = useAuth()
+  const [activeTab, setActiveTab] = useState('personal')
+  const ActivePanel = TAB_PANELS[activeTab]
 
   return (
-    <main className="min-h-screen bg-gray-50 pt-24 pb-12">
+    <div className="min-h-screen pt-24 pb-12" style={{ backgroundColor: 'var(--color-bg)' }}>
       <SEO
         title="Mi Perfil"
         description="Gestiona tus datos personales, seguridad y consulta tu progreso en Academia Creeser."
       />
       <div className="container-custom space-y-8">
-        {/* Header */}
         <ProfileHeader user={user} />
 
         {/* Tab bar */}
         <div className="overflow-x-auto">
           <nav
-            className="flex min-w-max border-b border-gray-200"
+            className="flex min-w-max"
             role="tablist"
             aria-label="Secciones del perfil"
+            style={{ borderBottom: '1px solid var(--color-surface-offset)' }}
           >
             {TABS.map(tab => (
               <button
@@ -62,19 +60,18 @@ const ProfileTemplate = () => {
                 role="tab"
                 aria-selected={activeTab === tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={cn(
-                  'relative flex items-center gap-2 px-5 py-3 text-sm font-medium transition-colors whitespace-nowrap',
-                  activeTab === tab.id
-                    ? 'text-primary-600'
-                    : 'text-gray-500 hover:text-gray-700'
-                )}
+                className="relative flex items-center gap-2 px-5 py-3 text-sm font-medium transition-colors whitespace-nowrap"
+                style={{
+                  color: activeTab === tab.id ? 'var(--color-primary)' : 'var(--color-text-faint)',
+                }}
               >
                 {tab.icon}
                 {tab.label}
                 {activeTab === tab.id && (
                   <motion.span
                     layoutId="profile-tab-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-600"
+                    className="absolute bottom-0 left-0 right-0 h-0.5"
+                    style={{ backgroundColor: 'var(--color-primary)' }}
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
@@ -97,10 +94,8 @@ const ProfileTemplate = () => {
           </motion.section>
         </AnimatePresence>
       </div>
-    </main>
-  );
-};
+    </div>
+  )
+}
 
-ProfileTemplate.propTypes = {};
-
-export default ProfileTemplate;
+export default ProfileTemplate

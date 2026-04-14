@@ -81,15 +81,24 @@ Plataforma web moderna para el Club Deportivo Creeser, especializado en Taekwond
 ### Frontend
 - **React 18** - Framework principal
 - **Vite** - Build tool y dev server
-- **Tailwind CSS** - Framework de estilos
-- **Framer Motion** - Animaciones
+- **Tailwind CSS 3.4** - Framework de estilos + CSS Custom Properties (OKLCH)
+- **GSAP** (ScrollTrigger, ScrollToPlugin) - Animaciones scroll-triggered y counters
+- **Framer Motion** - Animaciones de layout, mount/unmount y micro-interacciones
 - **React Router DOM** - Navegación
 - **React Icons** - Iconos
 - **React Toastify** - Notificaciones
 - **Recharts** - Gráficos y visualización de datos
 - **React Big Calendar** - Calendario académico interactivo
+- **@headlessui/react** - Componentes UI accesibles
 - **Axios** - Cliente HTTP
 - **Date-fns** - Manejo de fechas
+
+### Sistema de Diseño
+- **Paleta**: Púrpura OKLCH (#714790) + Turquesa (#3cbcc8) — [tokens.css](src/styles/tokens.css)
+- **Tipografía**: Satoshi (body), Bebas Neue / Cabinet Grotesk (display), Zodiak (accent)
+- **Modos**: Dark mode (Home/público) / Light mode (Dashboard/interno)
+- **Scroll**: CSS Scroll Snap + GSAP ScrollTrigger en Home
+- **Animaciones**: Enfoque híbrido GSAP + Framer Motion
 
 ### Backend (Futuro)
 - **Node.js + Express** - API REST

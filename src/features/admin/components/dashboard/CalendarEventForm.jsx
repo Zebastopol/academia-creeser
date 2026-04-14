@@ -14,7 +14,7 @@ const CalendarEventForm = ({ isOpen, onClose, onSave, event = null }) => {
 
   const [form, setForm] = useState({
     title: '', type: 'event', startDate: '', endDate: '',
-    classIds: [], location: '', description: '', color: '#0c92eb',
+    classIds: [], location: '', description: '', color: '#714790',
   });
 
   useEffect(() => {
@@ -27,10 +27,10 @@ const CalendarEventForm = ({ isOpen, onClose, onSave, event = null }) => {
         classIds: event.classIds || [],
         location: event.location || '',
         description: event.description || '',
-        color: event.color || '#0c92eb',
+        color: event.color || '#714790',
       });
     } else {
-      setForm({ title: '', type: 'event', startDate: '', endDate: '', classIds: [], location: '', description: '', color: '#0c92eb' });
+      setForm({ title: '', type: 'event', startDate: '', endDate: '', classIds: [], location: '', description: '', color: '#714790' });
     }
   }, [event, isOpen]);
 
@@ -63,7 +63,7 @@ const CalendarEventForm = ({ isOpen, onClose, onSave, event = null }) => {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block mb-1 text-sm font-medium text-gray-700">Tipo</label>
-            <select value={form.type} onChange={(e) => { handleChange('type', e.target.value); handleChange('color', CALENDAR_EVENT_TYPES[e.target.value]?.color || '#0c92eb'); }} className={inputCls}>
+            <select value={form.type} onChange={(e) => { handleChange('type', e.target.value); handleChange('color', CALENDAR_EVENT_TYPES[e.target.value]?.color || '#714790'); }} className={inputCls}>
               {Object.entries(CALENDAR_EVENT_TYPES).map(([key, val]) => (
                 <option key={key} value={key}>{val.label}</option>
               ))}

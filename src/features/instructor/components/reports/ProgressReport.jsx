@@ -43,7 +43,7 @@ const ProgressReport = ({ report }) => {
               <XAxis dataKey="month" tick={{ fontSize: 11 }} />
               <YAxis domain={[0, 100]} tick={{ fontSize: 11 }} />
               <Tooltip formatter={(v) => `${v}%`} />
-              <Line type="monotone" dataKey="rate" stroke="#0074ca" strokeWidth={2} dot={{ r: 4 }} />
+              <Line type="monotone" dataKey="rate" stroke="#714790" strokeWidth={2} dot={{ r: 4 }} />
             </LineChart>
           </ResponsiveContainer>
         </div>

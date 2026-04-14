@@ -22,11 +22,12 @@ const AdminSidebar = ({ collapsed, onClose }) => {
       )}
 
       <aside
-        className={`fixed top-0 left-0 z-50 flex flex-col h-screen bg-gray-900 text-white transition-transform duration-300
+        className={`fixed top-0 left-0 z-50 flex flex-col h-screen text-white transition-transform duration-300
           ${collapsed ? '-translate-x-full lg:translate-x-0 lg:w-20' : 'translate-x-0 w-64'}
           lg:sticky lg:top-0`}
+        style={{ backgroundColor: '#141118' }}
       >
-        <div className="flex items-center justify-between h-16 px-4 border-b border-gray-800">
+        <div className="flex items-center justify-between h-16 px-4" style={{ borderBottom: '1px solid #26212e' }}>
           {!collapsed && (
             <span className="text-lg font-bold font-display text-primary-400">
               CreeSer Admin
@@ -49,9 +50,10 @@ const AdminSidebar = ({ collapsed, onClose }) => {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors
                   ${isActive
-                    ? 'bg-primary-600 text-white'
-                    : 'text-gray-300 hover:bg-gray-800 hover:text-white'}`
+                    ? 'bg-primary-600 text-white shadow-glow-primary'
+                    : 'text-gray-300 hover:text-white'}`
                 }
+                style={({ isActive }) => (!isActive ? { ['--tw-bg-opacity']: 0 } : {})}
               >
                 {Icon && <Icon size={18} />}
                 {!collapsed && <span>{item.label}</span>}
@@ -60,7 +62,7 @@ const AdminSidebar = ({ collapsed, onClose }) => {
           })}
         </nav>
 
-        <div className="px-3 py-4 border-t border-gray-800">
+        <div className="px-3 py-4" style={{ borderTop: '1px solid #26212e' }}>
           <NavLink
             to="/dashboard"
             className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white transition-colors"

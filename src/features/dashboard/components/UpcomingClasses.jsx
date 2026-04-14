@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { FaCalendar } from 'react-icons/fa';
-import BookingItem from './BookingItem';
-import Button from '../../../shared/components/atoms/Button';
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { FaCalendar } from 'react-icons/fa'
+import BookingItem from './BookingItem'
+import Button from '../../../shared/components/atoms/Button'
 
 const UpcomingClasses = ({ classes }) => {
   return (
@@ -13,8 +13,14 @@ const UpcomingClasses = ({ classes }) => {
       className="card p-6 h-full"
     >
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold">Próximas Clases</h2>
-        <Link to="/agendar" className="text-primary-600 hover:text-primary-700 font-medium">
+        <h2 className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
+          Próximas Clases
+        </h2>
+        <Link
+          to="/agendar"
+          className="font-medium transition-colors"
+          style={{ color: 'var(--color-primary)' }}
+        >
           Agendar Nueva
         </Link>
       </div>
@@ -27,15 +33,17 @@ const UpcomingClasses = ({ classes }) => {
         </div>
       ) : (
         <div className="text-center py-12">
-          <FaCalendar className="text-6xl text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-600 mb-4">No tienes clases agendadas</p>
+          <FaCalendar className="text-6xl mx-auto mb-4" style={{ color: 'var(--color-text-faint)' }} />
+          <p className="mb-4" style={{ color: 'var(--color-text-muted)' }}>
+            No tienes clases agendadas
+          </p>
           <Button to="/agendar" variant="primary">
             Agendar Primera Clase
           </Button>
         </div>
       )}
     </motion.div>
-  );
-};
+  )
+}
 
-export default UpcomingClasses;
+export default UpcomingClasses

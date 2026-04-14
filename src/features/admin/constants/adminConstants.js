@@ -26,7 +26,7 @@ export {
 } from '../../../shared/constants/statusConstants';
 
 export const CONTACT_STATUS_MAP = {
-  new:     { label: 'Nuevo',      color: 'bg-blue-100 text-blue-800' },
+  new:     { label: 'Nuevo',      color: 'bg-primary-100 text-primary-800' },
   read:    { label: 'Leído',      color: 'bg-yellow-100 text-yellow-800' },
   replied: { label: 'Respondido', color: 'bg-green-100 text-green-800' },
 };
@@ -35,8 +35,8 @@ export const CALENDAR_EVENT_TYPES = {
   class_program: { label: 'Programa de Clases', color: '#36adf7' },
   exam:          { label: 'Examen',              color: '#f59e0b' },
   competition:   { label: 'Competencia',         color: '#E31E24' },
-  event:         { label: 'Evento',              color: '#0074ca' },
-  enrollment:    { label: 'Inscripción',         color: '#0c92eb' },
+  event:         { label: 'Evento',              color: '#714790' },
+  enrollment:    { label: 'Inscripción',         color: '#714790' },
 };
 
 export const REVENUE_PLANS = {

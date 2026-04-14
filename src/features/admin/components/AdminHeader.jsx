@@ -29,7 +29,7 @@ const AdminHeader = ({ onToggleSidebar }) => {
         <img
           src={user?.avatar}
           alt={user?.name}
-          className="w-9 h-9 rounded-full object-cover ring-2 ring-primary-100"
+          className="w-9 h-9 rounded-full object-cover ring-2 ring-primary-200"
         />
         <button
           onClick={logout}

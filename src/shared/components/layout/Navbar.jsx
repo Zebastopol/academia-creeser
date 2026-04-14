@@ -11,9 +11,11 @@ import Button from '../atoms/Button';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout, isAuthenticated, isAdmin, isInstructor } = useAuth();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,29 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isHome) {
+      setNavHidden(false);
+      return;
+    }
+
+    const container = document.querySelector('.page-scroll-container');
+    if (!container) return;
+
+    let timer = null;
+    const onScroll = () => {
+      setNavHidden(true);
+      clearTimeout(timer);
+      timer = setTimeout(() => setNavHidden(false), 200);
+    };
+
+    container.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      container.removeEventListener('scroll', onScroll);
+      clearTimeout(timer);
+    };
+  }, [isHome]);
 
   useEffect(() => {
     setIsOpen(false);
@@ -45,6 +70,7 @@ const Navbar = () => {
     <nav
       className={cn(
         'fixed w-full z-50 transition-all duration-300',
+        navHidden ? '-translate-y-full' : 'translate-y-0',
         scrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'
       )}
       aria-label="Navegación principal"

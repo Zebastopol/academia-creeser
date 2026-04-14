@@ -7,7 +7,7 @@ export const INSTRUCTOR_SIDEBAR_ITEMS = [
 ];
 
 export const PROGRESS_CATEGORIES = {
-  technical: { label: 'Técnica',   color: 'bg-blue-100 text-blue-800',   icon: 'FaBullseye' },
+  technical: { label: 'Técnica',   color: 'bg-primary-100 text-primary-800',   icon: 'FaBullseye' },
   attitude:  { label: 'Actitud',   color: 'bg-green-100 text-green-800', icon: 'FaHeart' },
   physical:  { label: 'Físico',    color: 'bg-orange-100 text-orange-800', icon: 'FaDumbbell' },
   general:   { label: 'General',   color: 'bg-gray-100 text-gray-800',   icon: 'FaStickyNote' },

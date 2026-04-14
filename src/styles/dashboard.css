@@ -1,0 +1,53 @@
+/* ==========================================================================
+   DASHBOARD STYLES — Light mode platform overrides
+   These styles apply when data-theme="light" is set on <html>.
+   ========================================================================== */
+
+/* Cards inside the dashboard use light surface tokens */
+[data-theme="light"] .card {
+  background-color: var(--color-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Dashboard welcome header gradient */
+.dashboard-hero {
+  background: linear-gradient(135deg,
+    oklch(0.38 0.15 305) 0%,
+    oklch(0.30 0.15 305) 50%,
+    oklch(0.15 0.08 305) 100%
+  );
+}
+
+/* KPI stat value styling */
+.stat-value {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-2xl);
+  color: var(--color-text);
+}
+
+/* Input focus styles for dashboard */
+[data-theme="light"] input:focus,
+[data-theme="light"] select:focus,
+[data-theme="light"] textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px oklch(0.45 0.15 305 / 0.25);
+  border-color: oklch(0.45 0.15 305 / 0.5);
+}
+
+/* Scrollbar in light mode */
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: oklch(0.45 0.15 305 / 0.3);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.45 0.15 305 / 0.5);
+}

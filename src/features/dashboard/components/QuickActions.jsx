@@ -1,29 +1,32 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { FaCalendar, FaUser, FaTrophy } from 'react-icons/fa';
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { FaCalendar, FaUser, FaTrophy } from 'react-icons/fa'
+
+const ACTIONS = [
+  {
+    to: '/agendar',
+    icon: <FaCalendar />,
+    label: 'Agendar Clase',
+    iconColor: 'var(--color-primary)',
+    bg: 'oklch(0.45 0.15 305 / 0.08)',
+  },
+  {
+    to: '/perfil',
+    icon: <FaUser />,
+    label: 'Mi Perfil',
+    iconColor: 'var(--color-text-muted)',
+    bg: 'var(--color-surface-2)',
+  },
+  {
+    to: '/membresias',
+    icon: <FaTrophy />,
+    label: 'Mejorar Plan',
+    iconColor: '#f59e0b',
+    bg: 'rgba(245, 158, 11, 0.08)',
+  },
+]
 
 const QuickActions = () => {
-  const actions = [
-    {
-      to: "/agendar",
-      icon: <FaCalendar className="text-primary-600" />,
-      label: "Agendar Clase",
-      bg: "bg-primary-50 hover:bg-primary-100"
-    },
-    {
-      to: "/perfil",
-      icon: <FaUser className="text-gray-600" />,
-      label: "Mi Perfil",
-      bg: "bg-gray-50 hover:bg-gray-100"
-    },
-    {
-      to: "/membresias",
-      icon: <FaTrophy className="text-gold-600" />,
-      label: "Mejorar Plan",
-      bg: "bg-gold-50 hover:bg-gold-100"
-    }
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -31,23 +34,26 @@ const QuickActions = () => {
       transition={{ delay: 0.5 }}
       className="card p-6"
     >
-      <h2 className="text-xl font-bold mb-4">Acciones Rápidas</h2>
+      <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--color-text)' }}>
+        Acciones Rápidas
+      </h2>
       <div className="space-y-3">
-        {actions.map((action, index) => (
+        {ACTIONS.map((action) => (
           <Link
-            key={index}
+            key={action.to}
             to={action.to}
-            className={`block p-3 rounded-lg transition-colors ${action.bg}`}
+            className="flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:translate-x-1"
+            style={{ backgroundColor: action.bg }}
           >
-            <div className="flex items-center space-x-3">
-              {action.icon}
-              <span className="font-medium text-gray-900">{action.label}</span>
-            </div>
+            <span style={{ color: action.iconColor }}>{action.icon}</span>
+            <span className="font-medium" style={{ color: 'var(--color-text)' }}>
+              {action.label}
+            </span>
           </Link>
         ))}
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default QuickActions;
+export default QuickActions

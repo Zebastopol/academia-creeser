@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 
-const CLASS_COLORS = ['#0c92eb', '#7cc8fb', '#015da4', '#36adf7'];
+const CLASS_COLORS = ['#714790', '#a06cc2', '#5e3a78', '#3cbcc8'];
 const LOCATION_COLORS = ['#E31E24', '#f59e0b'];
 
 /**
@@ -70,7 +70,7 @@ const PopularityReport = ({ report }) => {
               <XAxis dataKey="name" fontSize={11} />
               <YAxis fontSize={12} />
               <Tooltip />
-              <Bar dataKey="reservas" fill="#0c92eb" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="reservas" fill="#714790" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

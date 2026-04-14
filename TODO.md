@@ -214,6 +214,55 @@
 - `features/user-profile/services/profileService.js` — tutorName en allowedFields
 - `features/user-profile/components/ProfileTemplate.jsx` — Nueva tab "Pagos" con CheckoutHistoryList
 
+### Rediseño Visual Completo ✅ COMPLETADO (13-04-2026)
+- [x] Crear sistema de design tokens (tokens.css con OKLCH, clamp(), CSS Custom Properties)
+- [x] Instalar GSAP + @gsap/react para animaciones scroll-triggered
+- [x] Migrar paleta: primary azul → púrpura (#714790), accent rojo → turquesa (#3cbcc8)
+- [x] Cargar nuevas fuentes: Satoshi (body), Bebas Neue/Cabinet Grotesk (display), Zodiak (accent)
+- [x] Actualizar tailwind.config.js con escalas completas y tokens
+- [x] Crear CTAButton.jsx con variantes primary/outline/ghost/plan-highlight + shimmer/glow
+- [x] Implementar CSS Scroll Snap + SectionNavDots en Home
+- [x] Rediseñar Hero: overlay+grain, contador GSAP, CTA-1 shimmer, scroll indicator
+- [x] Rediseñar FeaturesSection: layout asimétrico, datos cuantitativos, stagger GSAP
+- [x] Rediseñar ClassesSection: filtro interactivo, overlay cards, CTA-2
+- [x] Rediseñar MembershipsSection: toggle mensual/anual, CTA-3 diferenciado
+- [x] Rediseñar TestimonialsSection: carrusel autoplay, Zodiak font, dots indicadores
+- [x] Rediseñar EventsSection: badges de estado, hover reveal button
+- [x] Rediseñar CTASection: formulario, 3 CTAs en jerarquía visual, social proof
+- [x] Crear dashboard.css para light mode de plataforma interna
+- [x] Migrar Dashboard usuario a light mode con KPIs GSAP animados
+- [x] Migrar Perfil a light mode con progress bar GSAP y glow avatar
+- [x] Migrar paleta de Admin panel (sidebar, charts, KPIs) a púrpura/turquesa
+- [x] Migrar paleta de Instructor panel (sidebar, charts, KPIs) a púrpura/turquesa
+- [x] Eliminar App.css huérfano
+- [x] Corregir doble `<main>` en Home.jsx
+- [x] Resolver accent-600/700/900 con escala completa en Tailwind config
+
+**Archivos creados:**
+- `src/styles/tokens.css` — CSS Custom Properties (colores OKLCH, tipografía clamp, motion, spacing)
+- `src/styles/dashboard.css` — Estilos light mode para plataforma interna
+- `src/shared/components/atoms/CTAButton.jsx` — CTA con shimmer/glow/plan-highlight
+- `src/shared/components/molecules/SectionNavDots.jsx` — Dots de navegación para scroll snap
+- `src/shared/hooks/useScrollTrigger.js` — Hook GSAP ScrollTrigger + counter animation
+
+**Archivos modificados:**
+- `tailwind.config.js` — Nueva paleta púrpura/turquesa, fuentes, box-shadows glow
+- `src/index.css` — Base styles con tokens, scroll snap, grain overlay, shimmer
+- `src/main.jsx` — Import de tokens.css y dashboard.css
+- `index.html` — theme-color actualizado a #714790
+- Home: Hero, FeaturesSection, ClassesSection, MembershipsSection, TestimonialsSection, EventsSection, CTASection (rediseño completo)
+- ClassCard, MembershipCard, EventCard, TestimonialCard (rediseño)
+- SectionHeading (migrado a tokens CSS)
+- Dashboard, StatCard, UpcomingClasses, QuickActions, ProgressCard (light mode + GSAP)
+- Profile, ProfileTemplate, ProfileHeader (light mode + GSAP progress)
+- AdminSidebar, AdminHeader (paleta púrpura)
+- InstructorSidebar (paleta púrpura)
+- Admin charts y constants (hex azul → púrpura)
+- Instructor constants y charts (blue → primary)
+- mockData.js (colores de calendario migrados)
+
+---
+
 ### Fase 11: Componentes Adicionales
 - [ ] Crear componente de Loading
 - [ ] Crear componente de Error
@@ -303,7 +352,7 @@
 6. Componentes adicionales (Fase 11)
 
 ### Mejoras Futuras
-- Modo oscuro
+- ~~Modo oscuro~~ ✅ Implementado (dark mode en Home, light mode en dashboard)
 - Internacionalización (i18n)
 - Chat en vivo
 - Notificaciones push

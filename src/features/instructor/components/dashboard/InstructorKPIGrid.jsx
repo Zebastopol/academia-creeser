@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { FaUsers, FaChalkboardTeacher, FaCheckCircle, FaCalendarCheck } from 'react-icons/fa';
 
 const KPI_CONFIG = [
-  { key: 'totalStudents',          label: 'Alumnos Activos',        icon: FaUsers,              color: 'bg-blue-50 text-blue-600' },
+  { key: 'totalStudents',          label: 'Alumnos Activos',        icon: FaUsers,              color: 'bg-primary-50 text-primary-600' },
   { key: 'totalClasses',           label: 'Clases Asignadas',       icon: FaChalkboardTeacher,  color: 'bg-green-50 text-green-600' },
   { key: 'monthAttendanceRate',    label: 'Asistencia Mensual',     icon: FaCheckCircle,        color: 'bg-yellow-50 text-yellow-600', suffix: '%' },
   { key: 'totalBookingsThisMonth', label: 'Reservas del Mes',       icon: FaCalendarCheck,      color: 'bg-purple-50 text-purple-600' },

@@ -17,13 +17,17 @@ Se ha creado exitosamente la **plataforma web moderna** para la  Academia Deport
 - ✅ Estructura de carpetas profesional
 
 ### 2. **Diseño y Estilos** 🎨
-- ✅ Paleta de colores inspirada en Taekwondo:
-  - Azul primario (#4f46e5) - Disciplina
-  - Rojo acento (#ef4444) - Energía
-  - Dorado (#eab308) - Excelencia
+- ✅ Sistema de design tokens con CSS Custom Properties (OKLCH)
+- ✅ Paleta de marca (Rediseño Visual 13-04-2026):
+  - Púrpura primario (#714790 / oklch 0.45 0.15 305) - Liderazgo
+  - Turquesa acento (#3cbcc8 / oklch 0.75 0.14 190) - Flow
+  - Dorado (#f59e0b) - Excelencia
+- ✅ Tipografía: Satoshi (body), Bebas Neue (display), Zodiak (accent)
+- ✅ Dark mode (Home/público) + Light mode (Dashboard/interno)
+- ✅ CSS Scroll Snap + GSAP ScrollTrigger en Home
+- ✅ Animaciones híbridas GSAP + Framer Motion
 - ✅ Diseño 100% responsive (mobile-first)
-- ✅ Animaciones interactivas y suaves
-- ✅ Componentes reutilizables con Tailwind
+- ✅ Componentes reutilizables con Tailwind + tokens
 
 ### 3. **Componentes Principales** 🧩
 - ✅ **Navbar**: Navegación responsive con menú móvil

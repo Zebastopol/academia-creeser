@@ -7,47 +7,64 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Colores de Marca Estáticos (Basados en logo/redes)
         primary: {
-          50: '#f0f7ff',
-          100: '#e0effe',
-          200: '#bae0fd',
-          300: '#7cc8fb',
-          400: '#36adf7',
-          500: '#0c92eb',
-          600: '#0074ca', // Azul Creeser principal
-          700: '#015da4',
-          800: '#064f86',
-          900: '#0b426f',
-          950: '#072a4a',
+          50:  '#faf7fc',
+          100: '#f3ecf8',
+          200: '#e8d9f2',
+          300: '#d5b8e6',
+          400: '#be92d6',
+          500: '#a06cc2',
+          600: '#714790',
+          700: '#5e3a78',
+          800: '#4d3062',
+          900: '#402851',
+          950: '#291838',
         },
         accent: {
-          DEFAULT: '#E31E24', // Rojo Pasión
-          hover: '#C1171D',
+          50:  '#effcfd',
+          100: '#d5f7f9',
+          200: '#b0eff4',
+          300: '#7ae3eb',
+          400: '#3cbcc8',
+          500: '#21a8b5',
+          600: '#1d8998',
+          700: '#196e7c',
+          800: '#1b5a65',
+          900: '#1b4b55',
+          950: '#0c3038',
+          DEFAULT: '#3cbcc8',
+          hover:   '#2a9faa',
         },
         gold: {
           400: '#fbbf24',
           500: '#f59e0b',
           600: '#d97706',
         },
-        // Sistema de Color Dinámico (Variables CSS)
         dynamic: {
           light: 'rgb(var(--color-dynamic-light) / <alpha-value>)',
-          main: 'rgb(var(--color-dynamic-main) / <alpha-value>)',
-          dark: 'rgb(var(--color-dynamic-dark) / <alpha-value>)',
+          main:  'rgb(var(--color-dynamic-main) / <alpha-value>)',
+          dark:  'rgb(var(--color-dynamic-dark) / <alpha-value>)',
           muted: 'rgb(var(--color-dynamic-muted) / <alpha-value>)',
-        }
+        },
+        surface: {
+          DEFAULT: 'var(--color-surface)',
+          2:       'var(--color-surface-2)',
+          offset:  'var(--color-surface-offset)',
+        },
       },
       fontFamily: {
-        display: ['Poppins', 'Montserrat', 'sans-serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Bebas Neue', 'Cabinet Grotesk', 'Impact', 'sans-serif'],
+        sans:    ['Satoshi', 'Cabinet Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+        accent:  ['Zodiak', 'DM Serif Display', 'serif'],
       },
       borderRadius: {
         'creeser': '12px',
       },
       boxShadow: {
-        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-      }
+        'soft':         '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+        'glow-primary': '0 0 24px oklch(0.45 0.15 305 / 0.4)',
+        'glow-accent':  '0 0 20px oklch(0.75 0.14 190 / 0.35)',
+      },
     },
   },
   plugins: [],

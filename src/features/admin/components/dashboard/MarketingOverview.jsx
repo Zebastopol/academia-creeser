@@ -46,7 +46,7 @@ const MarketingOverview = ({ marketing }) => {
               <YAxis fontSize={12} />
               <Tooltip />
               <Legend />
-              <Bar dataKey="Visitas" fill="#0c92eb" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="Visitas" fill="#714790" radius={[4, 4, 0, 0]} />
               <Bar dataKey="Visitantes Únicos" fill="#7cc8fb" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

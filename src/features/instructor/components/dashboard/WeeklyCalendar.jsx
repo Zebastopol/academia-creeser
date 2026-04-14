@@ -4,7 +4,7 @@ const ORDERED_DAYS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
 
 const CLASS_COLORS = {
   'Baby Taekwondo': 'bg-pink-100 text-pink-800 border-pink-200',
-  'Kids':           'bg-blue-100 text-blue-800 border-blue-200',
+  'Kids':           'bg-primary-100 text-primary-800 border-primary-200',
   'Cadetes':        'bg-green-100 text-green-800 border-green-200',
   'Adultos':        'bg-purple-100 text-purple-800 border-purple-200',
 };
