@@ -4,7 +4,7 @@ export const academiaInfo = {
   name: "Academia Creeser",
   clubName: "Academia Taekwondo Creeser",
   tagline: "Deporte con sentido",
-  description: "Creeser surge tras la pregunta de cómo ayudar a nuestro hijo a navegar en un mundo tan rápido y cambiante con seguridad y confianza. Utilizamos la metodología comprensiva para crear un espacio donde 'Creer, Crecer y Ser' sean una realidad.",
+  description: "Utilizamos la metodología comprensiva para crear un espacio donde 'Creer, Crecer y Ser' sean una realidad.",
   mission: "Llegar a la mayor cantidad de personas posibles e impactar en ellas de forma positiva, convirtiéndonos en aliados durante el desarrollo de tus hijos/as.",
   vision: "Soñamos con tener un gran centro profesional y moderno en donde podamos abarcar varios deportes, siendo un punto de encuentro donde el deporte sea el motor de cambio.",
   values: [

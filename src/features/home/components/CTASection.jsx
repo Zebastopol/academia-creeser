@@ -4,6 +4,8 @@ import { FaArrowRight } from 'react-icons/fa'
 import CTAButton from '../../../shared/components/atoms/CTAButton'
 import { toast } from 'react-toastify'
 
+const WHATSAPP_URL = `https://wa.me/56982211715?text=${encodeURIComponent('Hola, quiero agendar mi 1era clase gratis!')}`
+
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
@@ -99,7 +101,16 @@ const CTASection = () => {
 
             {/* 3 CTAs in visual hierarchy */}
             <div className="flex flex-col gap-3 mt-6">
-              <CTAButton type="submit" variant="primary" size="lg" shimmer glow className="w-full">
+              <CTAButton
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                size="lg"
+                shimmer
+                glow
+                className="w-full"
+              >
                 Agenda tu 1ª clase gratis
               </CTAButton>
               <CTAButton to="/registro" variant="outline" size="md" className="w-full">

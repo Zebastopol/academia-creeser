@@ -11,41 +11,23 @@ import Button from '../atoms/Button';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [navHidden, setNavHidden] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout, isAuthenticated, isAdmin, isInstructor } = useAuth();
   const isHome = location.pathname === '/';
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (!isHome) {
-      setNavHidden(false);
-      return;
+    if (isHome) {
+      const container = document.querySelector('.page-scroll-container');
+      if (!container) return;
+      const onScroll = () => setScrolled(container.scrollTop > 20);
+      container.addEventListener('scroll', onScroll, { passive: true });
+      return () => container.removeEventListener('scroll', onScroll);
     }
 
-    const container = document.querySelector('.page-scroll-container');
-    if (!container) return;
-
-    let timer = null;
-    const onScroll = () => {
-      setNavHidden(true);
-      clearTimeout(timer);
-      timer = setTimeout(() => setNavHidden(false), 200);
-    };
-
-    container.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      container.removeEventListener('scroll', onScroll);
-      clearTimeout(timer);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, [isHome]);
 
   useEffect(() => {
@@ -70,7 +52,6 @@ const Navbar = () => {
     <nav
       className={cn(
         'fixed w-full z-50 transition-all duration-300',
-        navHidden ? '-translate-y-full' : 'translate-y-0',
         scrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'
       )}
       aria-label="Navegación principal"

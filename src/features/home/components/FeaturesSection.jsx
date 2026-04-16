@@ -3,6 +3,7 @@ import { FaCalendar, FaStar, FaTrophy, FaUsers } from 'react-icons/fa'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionHeading from '../../../shared/components/atoms/SectionHeading'
+import { useCounterAnimation } from '../../../shared/hooks/useScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -40,6 +41,12 @@ const FEATURES = [
 
 const FeaturesSection = () => {
   const sectionRef = useRef(null)
+  const counterRef = useRef(null)
+
+  useCounterAnimation(counterRef, 350, {
+    suffix: '+',
+    scroller: '.page-scroll-container',
+  })
 
   useEffect(() => {
     if (!sectionRef.current) return
@@ -158,6 +165,23 @@ const FeaturesSection = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Counter */}
+        <div className="flex items-center justify-center gap-2 mt-12">
+          <span
+            ref={counterRef}
+            className="font-display font-black"
+            style={{ fontSize: 'var(--text-2xl)', color: 'var(--color-accent)' }}
+          >
+            0
+          </span>
+          <span
+            className="text-sm uppercase tracking-wider"
+            style={{ color: 'var(--color-text)' }}
+          >
+            Alumnos activos
+          </span>
         </div>
       </div>
     </section>

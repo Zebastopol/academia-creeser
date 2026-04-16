@@ -1,18 +1,12 @@
-import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { FaChevronDown } from 'react-icons/fa'
 import CTAButton from '../../../shared/components/atoms/CTAButton'
 import { academiaInfo } from '../../../shared/data/mockData'
-import { useCounterAnimation, scrollToSection } from '../../../shared/hooks/useScrollTrigger'
+import { scrollToSection } from '../../../shared/hooks/useScrollTrigger'
+
+const WHATSAPP_URL = `https://wa.me/56982211715?text=${encodeURIComponent('Hola, quiero agendar mi 1era clase gratis!')}`
 
 const Hero = () => {
-  const counterRef = useRef(null)
-
-  useCounterAnimation(counterRef, 350, {
-    suffix: '+',
-    scroller: '.page-scroll-container',
-  })
-
   return (
     <section className="snap-section relative flex items-start justify-center overflow-hidden grain-overlay">
       {/* Background */}
@@ -78,15 +72,23 @@ const Hero = () => {
             className="max-w-xl mb-10 leading-relaxed"
             style={{
               fontSize: 'var(--text-lg)',
-              color: 'var(--color-text-muted)',
+              color: 'var(--color-text)',
             }}
           >
             {academiaInfo.description}
           </p>
 
           {/* CTA-1 + Secondary */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <CTAButton to="/agendar" variant="primary" size="lg" shimmer glow>
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <CTAButton
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="primary"
+              size="lg"
+              shimmer
+              glow
+            >
               Agenda tu 1ª clase gratis
             </CTAButton>
             <CTAButton to="/clases" variant="outline" size="lg">
@@ -94,41 +96,19 @@ const Hero = () => {
             </CTAButton>
           </div>
 
-          {/* Counter */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="flex items-center gap-2"
-            style={{ color: 'var(--color-text-muted)' }}
+          {/* Scroll indicator */}
+          <button
+            onClick={() => scrollToSection(1)}
+            className="flex flex-col items-center gap-2 mt-4 animate-bounce"
+            style={{ color: 'var(--color-text-faint)' }}
+            aria-label="Ir a la siguiente sección"
           >
-            <span
-              ref={counterRef}
-              className="font-display font-black"
-              style={{
-                fontSize: 'var(--text-2xl)',
-                color: 'var(--color-accent)',
-              }}
-            >
-              0
-            </span>
-            <span className="text-sm uppercase tracking-wider">
-              Alumnos activos
-            </span>
-          </motion.div>
+            <span className="text-xs uppercase tracking-widest">Descubre más</span>
+            <FaChevronDown className="text-lg" />
+          </button>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <button
-        onClick={() => scrollToSection(1)}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 animate-bounce"
-        style={{ color: 'var(--color-text-faint)' }}
-        aria-label="Ir a la siguiente sección"
-      >
-        <span className="text-xs uppercase tracking-widest">Descubre más</span>
-        <FaChevronDown className="text-lg" />
-      </button>
     </section>
   )
 }
