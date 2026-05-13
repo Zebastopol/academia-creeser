@@ -50,15 +50,15 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Scroll Snap System */
+  /* Scroll Snap System (proximity = permite scroll libre + snap suave) */
   .page-scroll-container {
     height: 100dvh;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 1.5rem;
     scrollbar-width: none;
   }
 
@@ -68,24 +68,24 @@
 
   .snap-section {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
     min-height: 100dvh;
     position: relative;
-    padding-top: 5rem;
+    padding-top: 1.5rem;
   }
 
   .snap-section--tall {
     scroll-snap-align: start;
     scroll-snap-stop: normal;
     min-height: auto;
-    padding-top: 5rem;
+    padding-top: 1.5rem;
   }
 
   .snap-section--footer {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
-    min-height: 100dvh;
-    padding-bottom: 5rem;
+    scroll-snap-stop: normal;
+    min-height: auto;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

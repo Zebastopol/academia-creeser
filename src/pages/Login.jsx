@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { GiKimono } from 'react-icons/gi';
 import { toast } from 'react-toastify';
 import { useAuth } from '../features/auth/context/AuthContext';
 import Button from '../shared/components/atoms/Button';
+import BrandLogoMark from '../shared/components/atoms/BrandLogoMark';
 import SEO from '../shared/components/common/SEO';
 
 const Login = () => {
@@ -57,9 +57,7 @@ const Login = () => {
         >
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 mb-8 justify-center lg:justify-start">
-            <div className="p-2 bg-primary-600 rounded-lg">
-              <GiKimono className="text-2xl text-white" />
-            </div>
+            <BrandLogoMark variant="lightBg" className="h-12 w-12" />
             <span className="font-display font-bold text-2xl text-gray-900">CREESER</span>
           </Link>
 
@@ -151,7 +149,7 @@ const Login = () => {
       <div className="hidden lg:block lg:w-1/2 relative">
         <div className="absolute inset-0 bg-primary-600/20 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=1200&q=80"
+          src="https://images.unsplash.com/photo-1696690184741-7c441ca00fa1?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Taekwondo Practice"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -160,7 +158,7 @@ const Login = () => {
           <blockquote className="text-2xl font-display font-italic mb-4">
             "El Taekwondo no es solo defensa personal, es un camino de vida."
           </blockquote>
-          <p className="font-bold text-gold-400">— Maestro Juan Pérez</p>
+          <p className="font-bold text-gold-400">— Grand Master Shin-Chul Kang</p>
         </div>
       </div>
     </div>

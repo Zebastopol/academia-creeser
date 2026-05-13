@@ -31,7 +31,7 @@ const ClassesSection = () => {
 
   return (
     <section className="snap-section--tall" style={{ backgroundColor: 'var(--color-bg)' }}>
-      <div className="container-custom py-20 md:py-12">
+      <div className="container-custom py-12 md:py-8">
         <SectionHeading
           title="Nuestras Clases"
           subtitle="Programas diseñados para cada edad y nivel de experiencia"

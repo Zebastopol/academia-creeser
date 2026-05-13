@@ -9,6 +9,10 @@ const MembershipCard = ({ plan, index, isAnnual }) => {
   const monthlyPrice = plan.price
   const annualPrice = Math.round(monthlyPrice * 12 * 0.8)
   const displayPrice = isAnnual ? annualPrice : monthlyPrice
+  const promoPrice = plan.promoPrice
+    ? (isAnnual ? Math.round(plan.promoPrice * 12 * 0.8) : plan.promoPrice)
+    : null
+  const finalPrice = promoPrice ?? displayPrice
   const period = isAnnual ? 'año' : plan.period
 
   return (
@@ -43,19 +47,29 @@ const MembershipCard = ({ plan, index, isAnnual }) => {
         >
           {plan.name}
         </h3>
-        <div className="flex items-baseline justify-center gap-1">
-          <motion.span
-            key={displayPrice}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-display font-black"
-            style={{ fontSize: 'var(--text-2xl)', color: 'var(--color-text)' }}
-          >
-            ${displayPrice.toLocaleString()}
-          </motion.span>
-          <span className="text-sm" style={{ color: 'var(--color-text-faint)' }}>
-            /{period}
-          </span>
+        <div className="flex flex-col items-center gap-1">
+          {promoPrice && (
+            <span
+              className="text-sm line-through"
+              style={{ fontSize: 'var(--text-xl)', color: 'var(--color-text-faint)' }}
+            >
+              ${displayPrice.toLocaleString()}
+            </span>
+          )}
+          <div className="flex items-baseline gap-1">
+            <motion.span
+              key={finalPrice}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="font-display font-black"
+              style={{ fontSize: 'var(--text-2xl)', color: 'var(--color-text)' }}
+            >
+              ${finalPrice.toLocaleString()}
+            </motion.span>
+            <span className="text-sm" style={{ color: 'var(--color-text-faint)' }}>
+              /{period}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -80,6 +94,15 @@ const MembershipCard = ({ plan, index, isAnnual }) => {
           </li>
         ))}
       </ul>
+
+      {plan.promoNote && (
+        <p
+          className="text-center text-xs mb-4"
+          style={{ color: 'var(--color-text-faint)' }}
+        >
+          *{plan.promoNote}
+        </p>
+      )}
 
       {/* CTA-3 — differentiated by plan */}
       <CTAButton

@@ -18,7 +18,7 @@ const MembershipsSection = () => {
 
   return (
     <section className="snap-section flex items-start" style={{ backgroundColor: 'var(--color-surface)' }}>
-      <div className="container-custom py-20 md:py-12">
+      <div className="container-custom py-12 md:py-8">
         <SectionHeading
           title="Planes de Membresía"
           subtitle="Elige el plan que mejor se adapte a tus objetivos y estilo de vida"

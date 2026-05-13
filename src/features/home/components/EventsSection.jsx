@@ -16,11 +16,29 @@ const EventsSection = () => {
   }
 
   return (
-    <section className="snap-section flex items-start" style={{ backgroundColor: 'var(--color-surface)' }}>
-      <div className="container-custom py-20 md:py-12">
+    <section className="snap-section relative flex items-start overflow-hidden grain-overlay">
+      {/* Fondo con capa */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="../../../public/photos/equipo_main.webp"
+          alt="Equipo Academia Creeser"
+          className="w-full h-full object-cover"
+          width={1920}
+          height={1080}
+          loading="lazy"
+        />
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background:
+              'linear-gradient(to bottom, oklch(0.08 0.04 305 / 0.90), oklch(0.08 0.04 305 / 0.60) 60%, oklch(0.08 0.04 305 / 0.94))',
+          }}
+        />
+      </div>
+      <div className="container-custom relative z-20 py-12 md:py-8">
         <SectionHeading
           title="Próximos Eventos"
-          subtitle="Participa en nuestros eventos especiales y seminarios"
+          subtitle="Participa en nuestras actividades especiales y seminarios"
           inverse
         />
 

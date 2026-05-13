@@ -1,11 +1,12 @@
+import PropTypes from 'prop-types'
 import { motion } from 'framer-motion'
 import { cn } from '../../utils/cn'
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  viewport: { once: false, amount: 0.4 },
+  transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] },
 }
 
 /**
@@ -24,39 +25,47 @@ const SectionHeading = ({
   className,
   inverse = false,
   ...props
-}) => {
-  return (
-    <motion.div
-      {...fadeInUp}
-      className={cn(
-        'mb-16',
-        centered ? 'text-center' : 'text-left',
-        className
-      )}
-      {...props}
+}) => (
+  <motion.div
+    {...fadeInUp}
+    className={cn(
+      'mt-2 mb-8',
+      centered ? 'text-center' : 'text-left',
+      className
+    )}
+    {...props}
+  >
+    <h2
+      className="font-bold font-display mb-2"
+      style={{
+        fontSize: 'var(--text-2xl)',
+        color: inverse ? 'var(--color-text)' : 'var(--color-text, #1e1a26)',
+      }}
     >
-      <h2
-        className="font-bold font-display mb-4"
+      {title}
+    </h2>
+    {subtitle && (
+      <p
+        className={cn('max-w-3xl', centered && 'mx-auto')}
         style={{
-          fontSize: 'var(--text-2xl)',
-          color: inverse ? 'var(--color-text)' : 'var(--color-text, #1e1a26)',
+          fontSize: 'var(--text-base)',
+          color: inverse
+            ? 'var(--color-text-muted)'
+            : 'var(--color-text-muted, #6a647a)',
         }}
       >
-        {title}
-      </h2>
-      {subtitle && (
-        <p
-          className={cn('max-w-3xl', centered && 'mx-auto')}
-          style={{
-            fontSize: 'var(--text-lg)',
-            color: inverse ? 'var(--color-text-muted)' : 'var(--color-text-muted, #6a647a)',
-          }}
-        >
-          {subtitle}
-        </p>
-      )}
-    </motion.div>
-  )
+        {subtitle}
+      </p>
+    )}
+  </motion.div>
+)
+
+SectionHeading.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  centered: PropTypes.bool,
+  inverse: PropTypes.bool,
+  className: PropTypes.string,
 }
 
 export default SectionHeading

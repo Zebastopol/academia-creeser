@@ -147,11 +147,15 @@ const About = () => {
               viewport={{ once: true }}
               className="relative mx-auto lg:mx-0"
             >
-              <img
-                src={instructor.image}
-                alt={instructor.name}
-                className="w-72 h-72 lg:w-80 lg:h-80 object-cover rounded-2xl shadow-2xl"
-              />
+              <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full shadow-2xl overflow-hidden flex items-center justify-center bg-gray-100">
+                <img
+                  src={instructor.image}
+                  alt={instructor.name}
+                  className="w-full h-full object-cover object-top"
+                  style={{ objectPosition: 'center top' }}
+                />
+              </div>
+      
               <div className="absolute -bottom-4 -right-4 bg-gold-400 text-gray-900 px-4 py-2 rounded-lg font-bold text-sm shadow-lg">
                 {instructor.rank}
               </div>

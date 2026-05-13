@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import { GiKimono } from 'react-icons/gi';
 import { academiaInfo } from '../../data/mockData';
+import BrandLogoMark from '../atoms/BrandLogoMark';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,9 +13,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="p-2 bg-primary-600 rounded-lg">
-                <GiKimono className="text-2xl text-white" />
-              </div>
+              <BrandLogoMark variant="darkBg" className="h-12 w-12" />
               <span className="font-display font-bold text-2xl tracking-tight text-white">
                 {academiaInfo.name.split(' ')[1].toUpperCase()}
               </span>

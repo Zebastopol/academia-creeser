@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { GiKimono } from 'react-icons/gi';
 import { toast } from 'react-toastify';
 import { useAuth } from '../features/auth/context/AuthContext';
 import Button from '../shared/components/atoms/Button';
+import BrandLogoMark from '../shared/components/atoms/BrandLogoMark';
 import SEO from '../shared/components/common/SEO';
 
 const Register = () => {
@@ -61,7 +61,7 @@ const Register = () => {
       <div className="hidden lg:block lg:w-1/2 relative">
         <div className="absolute inset-0 bg-accent-600/20 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80"
+          src="https://images.unsplash.com/photo-1476525223214-c31ff100e1ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Taekwondo Training"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -83,9 +83,7 @@ const Register = () => {
         >
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 mb-8 justify-center lg:justify-start">
-            <div className="p-2 bg-primary-600 rounded-lg">
-              <GiKimono className="text-2xl text-white" />
-            </div>
+            <BrandLogoMark variant="lightBg" className="h-12 w-12" />
             <span className="font-display font-bold text-2xl text-gray-900">CREESER</span>
           </Link>
 

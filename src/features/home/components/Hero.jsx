@@ -1,41 +1,56 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { FaChevronDown } from 'react-icons/fa'
 import CTAButton from '../../../shared/components/atoms/CTAButton'
 import { academiaInfo } from '../../../shared/data/mockData'
-import { scrollToSection } from '../../../shared/hooks/useScrollTrigger'
+import { useMotionScroll } from '../../../shared/hooks/useMotionScroll'
+import { useScrollSetup } from '../../../shared/hooks/useScrollTrigger'
 
 const WHATSAPP_URL = `https://wa.me/56982211715?text=${encodeURIComponent('Hola, quiero agendar mi 1era clase gratis!')}`
 
 const Hero = () => {
+  const { scrollToSection } = useScrollSetup()
+  const reducedMotion = useReducedMotion()
+  const { ref, value: blurFilter } = useMotionScroll(
+    [0, 1],
+    ['blur(0px)', 'blur(10px)']
+  )
+  const motionProps = reducedMotion
+    ? {}
+    : {
+        ref,
+        style: { filter: blurFilter },
+      }
+
   return (
     <section className="snap-section relative flex items-start justify-center overflow-hidden grain-overlay">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 z-10"
-          style={{
-            background:
-              'linear-gradient(to bottom, oklch(0.08 0.04 305 / 0.85), oklch(0.08 0.04 305 / 0.5) 50%, oklch(0.08 0.04 305 / 0.9))',
-          }}
-        />
-        <img
-          src="/portada_1920_small_650.webp"
-          alt="Práctica de Taekwondo en la Academia Creeser"
-          className="w-full h-full object-cover"
-          width={1920}
-          height={1080}
-          loading="eager"
-        />
-      </div>
+      <motion.div className="relative w-full" {...motionProps}>
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background:
+                'linear-gradient(to bottom, oklch(0.08 0.04 305 / 0.85), oklch(0.08 0.04 305 / 0.5) 50%, oklch(0.08 0.04 305 / 0.9))',
+            }}
+          />
+          <img
+            src="/portada_1920_small_650.webp"
+            alt="Práctica de Taekwondo en la Academia Creeser"
+            className="w-full h-full object-cover"
+            width={1920}
+            height={1080}
+            loading="eager"
+          />
+        </div>
 
-      {/* Content */}
-      <div className="relative z-20 container-custom text-center px-4 pt-4 pb-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col items-center max-w-3xl mx-auto"
-        >
+        {/* Content */}
+        <div className="relative z-20 container-custom text-center px-4 pt-12 md:pt-16 pb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center max-w-3xl mx-auto"
+          >
           {/* Tagline badge */}
           <motion.span
             initial={{ opacity: 0, scale: 0.85 }}
@@ -106,8 +121,9 @@ const Hero = () => {
             <span className="text-xs uppercase tracking-widest">Descubre más</span>
             <FaChevronDown className="text-lg" />
           </button>
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
+      </motion.div>
 
     </section>
   )

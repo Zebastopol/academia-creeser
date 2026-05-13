@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -11,15 +11,38 @@ const SCROLLER = '.page-scroll-container'
  * Sets up GSAP ScrollTrigger for all .snap-section elements
  * and returns helpers for programmatic navigation.
  * @param {{ onSectionChange?: (index: number) => void }} [options]
+ * @returns {{ scrollToSection: (index: number) => void }}
  */
 export function useScrollSetup(options = {}) {
   const triggersRef = useRef([])
+  const onSectionChange = options.onSectionChange
 
-  useEffect(() => {
+  const scrollToSection = useCallback((index) => {
     const container = document.querySelector(SCROLLER)
     if (!container) return
 
-    const sections = container.querySelectorAll('.snap-section, .snap-section--tall, .snap-section--footer')
+    const sections = container.querySelectorAll(
+      '.snap-section, .snap-section--tall, .snap-section--footer'
+    )
+    const target = sections[index]
+    if (!target) return
+
+    gsap.to(container, {
+      scrollTo: { y: target, offsetY: 0 },
+      duration: 0.7,
+      ease: 'power2.inOut',
+    })
+  }, [])
+
+  useEffect(() => {
+    if (!onSectionChange) return
+
+    const container = document.querySelector(SCROLLER)
+    if (!container) return
+
+    const sections = container.querySelectorAll(
+      '.snap-section, .snap-section--tall, .snap-section--footer'
+    )
 
     sections.forEach((section, i) => {
       const trigger = ScrollTrigger.create({
@@ -27,8 +50,8 @@ export function useScrollSetup(options = {}) {
         scroller: container,
         start: 'top top',
         end: 'bottom top',
-        onEnter: () => options.onSectionChange?.(i),
-        onEnterBack: () => options.onSectionChange?.(i),
+        onEnter: () => onSectionChange(i),
+        onEnterBack: () => onSectionChange(i),
       })
       triggersRef.current.push(trigger)
     })
@@ -37,61 +60,9 @@ export function useScrollSetup(options = {}) {
       triggersRef.current.forEach(t => t.kill())
       triggersRef.current = []
     }
-  }, [])
+  }, [onSectionChange])
 
   return { scrollToSection }
-}
-
-/**
- * Smoothly scrolls to a snap-section by index.
- * @param {number} index
- */
-export function scrollToSection(index) {
-  const container = document.querySelector(SCROLLER)
-  if (!container) return
-
-  const sections = container.querySelectorAll('.snap-section, .snap-section--tall, .snap-section--footer')
-  const target = sections[index]
-  if (!target) return
-
-  gsap.to(container, {
-    scrollTo: { y: target, offsetY: 0 },
-    duration: 0.9,
-    ease: 'power3.inOut',
-  })
-}
-
-/**
- * Creates a GSAP animation that triggers when an element enters the viewport.
- * Works with or without a scroll container.
- * @param {React.RefObject} ref - Element ref to animate
- * @param {gsap.TweenVars} fromVars - Starting state
- * @param {gsap.TweenVars} toVars - Ending state
- * @param {{ scroller?: string | Element }} [options]
- */
-export function useRevealAnimation(ref, fromVars, toVars, options = {}) {
-  useEffect(() => {
-    if (!ref.current) return
-
-    const scroller = options.scroller
-      ? document.querySelector(options.scroller)
-      : undefined
-
-    const anim = gsap.fromTo(ref.current, fromVars, {
-      ...toVars,
-      scrollTrigger: {
-        trigger: ref.current,
-        ...(scroller && { scroller }),
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
-      },
-    })
-
-    return () => {
-      anim.scrollTrigger?.kill()
-      anim.kill()
-    }
-  }, [])
 }
 
 /**

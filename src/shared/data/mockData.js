@@ -35,7 +35,7 @@ export const classes = [
     instructorId: 3,
     description: "Combina desarrollo motor y aprendizaje significativo mediante circuitos y retos cognitivos que fomentan la autonomía y el respeto.",
     methodology: "Metodología comprensiva y aprendizaje situado.",
-    image: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80",
+    image: "../../../public/photos/baby_tkd01.webp",
     schedules: [
       { location: "Ñuñoa", day: "Lunes", time: "17:00 a 17:40" }
     ],
@@ -48,7 +48,7 @@ export const classes = [
     instructorId: 3,
     description: "La disciplina como eje central a través de juegos que fomentan la interacción social, el pensamiento crítico y la autogestión.",
     methodology: "Aprendizaje por indagación.",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
+    image: "../../../public/photos/kids00.webp",
     schedules: [
       { location: "La Reina", day: "Martes", time: "17:30 a 18:40" },
       { location: "La Reina", day: "Jueves", time: "17:30 a 18:40" }
@@ -78,7 +78,7 @@ export const classes = [
     instructorId: 3,
     description: "Catalizador de bienestar y salud mental. Diseñado para liberar el estrés laboral/académico mediante esfuerzo consciente y trabajo en equipo.",
     methodology: "Aprendizaje colaborativo y resiliencia.",
-    image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&q=80",
+    image: "../../../public/photos/kyurugi_ex.webp",
     schedules: [
       { location: "La Reina", day: "Martes", time: "19:40 a 20:40" },
       { location: "La Reina", day: "Jueves", time: "19:40 a 20:40" }
@@ -92,6 +92,8 @@ export const memberships = [
     id: 1,
     name: "1 vez x Semana",
     price: 30000,
+    promoPrice: 25000,
+    promoNote: "pagando antes del 5 de cada mes",
     period: "mensual",
     features: [
       "4 clases al mes",
@@ -106,10 +108,10 @@ export const memberships = [
     name: "2 veces x Semana",
     price: 40000,
     promoPrice: 35000,
+    promoNote: "pagando antes del 5 de cada mes",
     period: "mensual",
     features: [
       "8 clases al mes",
-      "Precio especial hasta el día 5",
       "Metodología comprensiva",
       "Descuento familiar 20%",
       "Seguimiento de progreso"
@@ -148,37 +150,37 @@ export const events = [
     time: "10:00 - 18:00",
     location: "Sede La Reina",
     category: "Celebración",
-    image: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&q=80"
+    image: "/photos/Bomberos_03-1139x1536.webp",
   },
   {
     id: 2,
-    title: "Encuentro Inter-Academias",
-    description: "Jornada de práctica y camaradería con alumnos de otras escuelas de Taekwondo.",
+    title: "Trekking en el Bosque",
+    description: "Jornada de trekking en el Parque Metropolitano de Santiago.",
     date: "2026-07-20",
     time: "09:00 - 14:00",
     location: "Sede Ñuñoa",
     category: "Encuentro",
-    image: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80"
+    image: "/photos/Trekking_03-1.webp",
   },
   {
     id: 3,
-    title: "Campeonato Metropolitano Taekwondo WT",
-    description: "Competencia regional clasificatoria para el Nacional. Categorías infantil, cadete y adulto.",
+    title: "Campamento de Verano Cadetes y Juveniles",
+    description: "Campamento de verano para cadetes y juveniles.",
     date: "2026-08-10",
     time: "08:00 - 18:00",
     location: "Polideportivo Municipal La Reina",
-    category: "Competencia",
-    image: "https://images.unsplash.com/photo-1555597408-26bc8e548a46?w=800&q=80"
+    category: "Extracurricular",
+    image: "/photos/Playa_02.webp",
   },
   {
     id: 4,
-    title: "Seminario Poomsae Avanzado",
-    description: "Clínica técnica dirigida por maestros invitados. Enfoque en formas de competición y expresión.",
+    title: "Campeonato Enegros",
+    description: "Campeonato regional de Taekwondo organizado por la Federación Chilena de Taekwondo.",
     date: "2026-09-05",
     time: "10:00 - 14:00",
     location: "Sede La Reina",
     category: "Seminario",
-    image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&q=80"
+    image: "/photos/podio.webp",
   }
 ];
 
@@ -194,7 +196,7 @@ export const instructor = {
     "Ex competidor nacional e internacional",
     "Formación técnica en México"
   ],
-  image: "https://i.pravatar.cc/300?img=33"
+  image: "../../../public/photos/rodrigo.webp"
 };
 
 export const mockUsers = [

@@ -2,11 +2,11 @@ import { useState, useEffect, Fragment } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaUser, FaSignOutAlt, FaTachometerAlt, FaCog, FaChalkboardTeacher } from 'react-icons/fa';
-import { GiKimono } from 'react-icons/gi';
 import { Menu, Transition } from '@headlessui/react';
 import { useAuth } from '../../../features/auth/context/AuthContext';
 import { cn } from '../../utils/cn';
 import Button from '../atoms/Button';
+import BrandLogoMark from '../atoms/BrandLogoMark';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,15 +60,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group" aria-label="Ir al inicio">
-            <div className={cn(
-              'p-2 rounded-lg transition-all duration-300',
-              scrolled ? 'bg-primary-600' : 'bg-white'
-            )}>
-              <GiKimono className={cn(
-                'text-2xl transition-colors duration-300',
-                scrolled ? 'text-white' : 'text-primary-600'
-              )} />
-            </div>
+            <BrandLogoMark
+              variant={scrolled ? 'darkBg' : 'lightBg'}
+              className="h-12 w-12 "
+            />
             <div>
               <h1 className={cn(
                 'font-display font-bold text-xl transition-colors duration-300',

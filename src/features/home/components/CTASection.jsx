@@ -39,7 +39,7 @@ const CTASection = () => {
         }}
       />
 
-      <div className="relative z-10 container-custom py-20 md:py-12 text-center">
+      <div className="relative z-10 container-custom py-12 md:py-8 text-center">
         <motion.div {...fadeInUp} className="max-w-2xl mx-auto">
           {/* Headline */}
           <h2

@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="container-custom py-20 md:py-12">
+      <div className="container-custom py-12 md:py-8">
         <SectionHeading
           title="Lo Que Dicen Nuestros Alumnos"
           subtitle="Historias reales de transformación y éxito"

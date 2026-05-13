@@ -31,9 +31,9 @@
   --color-accent-hover:   oklch(0.65 0.14 190);
 
   /* Text */
-  --color-text:           #f2f0f5;
-  --color-text-muted:     #b5a8d0;
-  --color-text-faint:     #a594ff;
+  --color-text:           #fafafa;
+  --color-text-muted:     #d7d5fa;
+  --color-text-faint:     #aaaaee;
 
   /* Hero-specific */
   --color-hero-creer:     #013294;
