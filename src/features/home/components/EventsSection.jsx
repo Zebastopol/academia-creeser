@@ -20,7 +20,7 @@ const EventsSection = () => {
       {/* Fondo con capa */}
       <div className="absolute inset-0 z-0">
         <img
-          src="../../../public/photos/equipo_main.webp"
+          src={images.events.equipo}
           alt="Equipo Academia Creeser"
           className="w-full h-full object-cover"
           width={1920}

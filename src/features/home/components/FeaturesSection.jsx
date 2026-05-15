@@ -17,7 +17,7 @@ const FEATURES = [
       'Refuerza y practica las técnicas aprendidas a través de nuestra plataforma de entrenamiento.',
     stat: '50/50 presencial - virtual',
     statLabel: 'plataforma',
-    image:  '../../../public/photos/sec_list_01.webp',
+    image:  <img src = {images.hero.card1} alt="Plataforma Marcial Avanzada" />, 
   },
   {
     id: 'comunidad',
@@ -28,7 +28,7 @@ const FEATURES = [
     stat: 'comunidad+',
     statLabel: 'Más que un equipo, una familia',
     image:
-      '../../../public/photos/AF_002.webp',
+      <img src = {images.hero.card2} alt="Únete a nuestra comunidad Creeser" />, 
   },
   {
     id: 'horarios',
@@ -39,7 +39,7 @@ const FEATURES = [
     stat: '6',
     statLabel: 'días a la semana',
     image:
-      '../../../public/photos/bg_team.webp',
+      <img src = {images.hero.card3} alt="Horarios Flexibles" />, 
   },
   {
     id: 'deportivo',
@@ -50,7 +50,7 @@ const FEATURES = [
     stat: 'vida sana+',
     statLabel: 'Deporte Marcial y Vida Sana',
     image:
-      '../../../public/photos/equipo_2.webp',
+      <img src = {images.hero.card4} alt="Deportivo y divertido" />, 
   },
 ]
 

@@ -1,5 +1,5 @@
 // Datos Oficiales - Academia Creeser
-import { images } from '../../data/imageMap'
+import { images } from '../../../public/imageMap'
 
 export const academiaInfo = {
   name: "Academia Creeser",

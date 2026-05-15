@@ -4,6 +4,14 @@
  * Consumir con: import { images } from '../../data/imageMap'
  */
 export const images = {
+
+  hero: {
+    card1: '/photos/sec_list_01.webp',
+    card2: '/photos/AF_002.webp',
+    card3: '/photos/bg_team.webp',
+    card4: '/photos/equipo_2.webp',
+  },
+
   classes: {
     babyTkd: '/photos/baby_tkd01.webp',
     kids: '/photos/kids00.webp',
@@ -11,6 +19,7 @@ export const images = {
     adultos: '/photos/kyurugi_ex.webp',
   },
   events: {
+    equipo: '/photos/equipo_main.webp',
     aniversario: '/photos/Bomberos_03-1139x1536.webp',
     trekking: '/photos/Trekking_03-1.webp',
     campamento: '/photos/Playa_02.webp',
