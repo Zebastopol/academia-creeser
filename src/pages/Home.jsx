@@ -8,6 +8,7 @@ import MembershipsSection from '../features/home/components/MembershipsSection'
 import TestimonialsSection from '../features/home/components/TestimonialsSection'
 import EventsSection from '../features/home/components/EventsSection'
 import CTASection from '../features/home/components/CTASection'
+import ScrollTicker from '../features/home/components/ScrollTicker'
 
 const Home = () => {
   return (
@@ -25,9 +26,8 @@ const Home = () => {
         <TestimonialsSection />
         <EventsSection />
         <CTASection />
-        <div className="snap-section--footer bg-gray-900">
-          <Footer />
-        </div>
+        <ScrollTicker />
+        <Footer />
       </div>
     </>
   )

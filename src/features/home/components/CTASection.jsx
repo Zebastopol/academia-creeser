@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useCallback, useState } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import { FaArrowRight } from 'react-icons/fa'
+import Particles from '@tsparticles/react'
+import { loadSlim } from '@tsparticles/slim'
 import CTAButton from '../../../shared/components/atoms/CTAButton'
 import { toast } from 'react-toastify'
-
-const WHATSAPP_URL = `https://wa.me/56982211715?text=${encodeURIComponent('Hola, quiero agendar mi 1era clase gratis!')}`
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -15,9 +15,50 @@ const fadeInUp = {
 
 const CTASection = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '' })
+  const reducedMotion = useReducedMotion()
+
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine)
+  }, [])
+
+  const particlesConfig = {
+    fullScreen: { enable: false },
+    background: { color: { value: 'transparent' } },
+    particles: {
+      number: { value: 60, density: { enable: true, area: 800 } },
+      color: { value: ['#714790', '#4f98a3'] },
+      shape: { type: 'circle' },
+      opacity: { value: 0.25, random: true },
+      size: { value: { min: 1, max: 3 } },
+      move: {
+        enable: true,
+        speed: reducedMotion ? 0 : 0.6,
+        direction: 'none',
+        outModes: 'out',
+      },
+      links: {
+        enable: true,
+        distance: 130,
+        color: '#714790',
+        opacity: 0.1,
+        width: 1,
+      },
+    },
+    interactivity: {
+      events: { onHover: { enable: !reducedMotion, mode: 'repulse' } },
+      modes: { repulse: { distance: 80 } },
+    },
+    detectRetina: true,
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const hasData = form.name.trim() || form.email.trim() || form.phone.trim()
+    const msg = hasData
+      ? `Hola, mi nombre es ${form.name} y quiero agendar mi primera clase gratis. Mi correo es ${form.email}${form.phone ? `, mi teléfono es ${form.phone}` : ''}. Para que puedan mandarme más información, gracias.`
+      : 'Hola, quiero agendar mi 1era clase gratis'
+    const url = `https://wa.me/56982211715?text=${encodeURIComponent(msg)}`
+    window.open(url, '_blank', 'noopener,noreferrer')
     toast.success('¡Gracias! Te contactaremos pronto.')
     setForm({ name: '', email: '', phone: '' })
   }
@@ -31,9 +72,14 @@ const CTASection = () => {
       className="snap-section relative flex items-start grain-overlay overflow-hidden"
       style={{ backgroundColor: 'var(--color-bg)' }}
     >
-      {/* Radial gradient background */}
+      <Particles
+        id="cta-particles"
+        init={particlesInit}
+        options={particlesConfig}
+        className="absolute inset-0 pointer-events-none z-0"
+      />
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none z-0"
         style={{
           background: 'radial-gradient(ellipse at center, oklch(0.45 0.15 305 / 0.15) 0%, transparent 70%)',
         }}
@@ -102,13 +148,11 @@ const CTASection = () => {
             {/* 3 CTAs in visual hierarchy */}
             <div className="flex flex-col gap-3 mt-6">
               <CTAButton
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 variant="primary"
                 size="lg"
                 shimmer
                 glow
+                type="submit"
                 className="w-full"
               >
                 Agenda tu 1ª clase gratis

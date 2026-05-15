@@ -113,7 +113,7 @@ const Hero = () => {
 
           {/* Scroll indicator */}
           <button
-            onClick={() => scrollToSection(1)}
+            onClick={() => setTimeout(() => scrollToSection(1), 500)}
             className="flex flex-col items-center gap-2 mt-4 animate-bounce"
             style={{ color: 'var(--color-text-faint)' }}
             aria-label="Ir a la siguiente sección"

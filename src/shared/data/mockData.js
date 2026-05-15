@@ -1,4 +1,5 @@
 // Datos Oficiales - Academia Creeser
+import { images } from '../../data/imageMap'
 
 export const academiaInfo = {
   name: "Academia Creeser",
@@ -19,6 +20,7 @@ export const academiaInfo = {
     email: "espaciocreeser.contacto@gmail.com",
     instagram: "@creesertkd",
     instagramUrl: "https://www.instagram.com/creesertkd/",
+    facebookUrl: "https://www.facebook.com/p/Espacio-Creeser-100086943102222/",
     availability: "Lun a Vie 09:00 - 18:00"
   },
   locations: [
@@ -35,7 +37,7 @@ export const classes = [
     instructorId: 3,
     description: "Combina desarrollo motor y aprendizaje significativo mediante circuitos y retos cognitivos que fomentan la autonomía y el respeto.",
     methodology: "Metodología comprensiva y aprendizaje situado.",
-    image: "../../../public/photos/baby_tkd01.webp",
+    image: images.classes.babyTkd,
     schedules: [
       { location: "Ñuñoa", day: "Lunes", time: "17:00 a 17:40" }
     ],
@@ -48,7 +50,7 @@ export const classes = [
     instructorId: 3,
     description: "La disciplina como eje central a través de juegos que fomentan la interacción social, el pensamiento crítico y la autogestión.",
     methodology: "Aprendizaje por indagación.",
-    image: "../../../public/photos/kids00.webp",
+    image: images.classes.kids,
     schedules: [
       { location: "La Reina", day: "Martes", time: "17:30 a 18:40" },
       { location: "La Reina", day: "Jueves", time: "17:30 a 18:40" }
@@ -62,7 +64,7 @@ export const classes = [
     instructorId: 3,
     description: "Excelencia técnico-táctica y toma de decisiones. Sustituimos el juego por el rigor formativo en un entorno de pertenencia y amistad.",
     methodology: "Metodología comprensiva técnica-táctica.",
-    image: "https://images.unsplash.com/photo-1555597408-26bc8e548a46?w=800&q=80",
+    image: images.classes.cadetes,
     schedules: [
       { location: "Ñuñoa", day: "Lunes", time: "18:00 a 19:00" },
       { location: "Ñuñoa", day: "Miércoles", time: "18:00 a 19:00" },
@@ -78,7 +80,7 @@ export const classes = [
     instructorId: 3,
     description: "Catalizador de bienestar y salud mental. Diseñado para liberar el estrés laboral/académico mediante esfuerzo consciente y trabajo en equipo.",
     methodology: "Aprendizaje colaborativo y resiliencia.",
-    image: "../../../public/photos/kyurugi_ex.webp",
+    image: images.classes.adultos,
     schedules: [
       { location: "La Reina", day: "Martes", time: "19:40 a 20:40" },
       { location: "La Reina", day: "Jueves", time: "19:40 a 20:40" }
@@ -125,7 +127,7 @@ export const testimonials = [
     id: 1,
     name: "Carolina Paz",
     role: "Apoderada",
-    image: "https://i.pravatar.cc/150?img=20",
+    image: images.testimonials.carolina,
     rating: 5,
     text: "Academia Creeser ha sido fundamental en el desarrollo de la confianza de mi hijo. Los valores que enseñan se ven reflejados en casa.",
     date: "2024-02-15"
@@ -134,7 +136,7 @@ export const testimonials = [
     id: 2,
     name: "Roberto Méndez",
     role: "Alumno Adultos",
-    image: "https://i.pravatar.cc/150?img=15",
+    image: images.testimonials.roberto,
     rating: 5,
     text: "Excelente ambiente para liberar el estrés después del trabajo. El profesor Rodrigo tiene una metodología muy cercana y efectiva.",
     date: "2024-03-01"
@@ -150,7 +152,7 @@ export const events = [
     time: "10:00 - 18:00",
     location: "Sede La Reina",
     category: "Celebración",
-    image: "/photos/Bomberos_03-1139x1536.webp",
+    image: images.events.aniversario,
   },
   {
     id: 2,
@@ -160,7 +162,7 @@ export const events = [
     time: "09:00 - 14:00",
     location: "Sede Ñuñoa",
     category: "Encuentro",
-    image: "/photos/Trekking_03-1.webp",
+    image: images.events.trekking,
   },
   {
     id: 3,
@@ -170,7 +172,7 @@ export const events = [
     time: "08:00 - 18:00",
     location: "Polideportivo Municipal La Reina",
     category: "Extracurricular",
-    image: "/photos/Playa_02.webp",
+    image: images.events.campamento,
   },
   {
     id: 4,
@@ -180,7 +182,7 @@ export const events = [
     time: "10:00 - 14:00",
     location: "Sede La Reina",
     category: "Seminario",
-    image: "/photos/podio.webp",
+    image: images.events.campeonato,
   }
 ];
 
@@ -196,7 +198,7 @@ export const instructor = {
     "Ex competidor nacional e internacional",
     "Formación técnica en México"
   ],
-  image: "../../../public/photos/rodrigo.webp"
+  image: images.instructor.rodrigo
 };
 
 export const mockUsers = [
@@ -206,7 +208,7 @@ export const mockUsers = [
     password: "admin123",
     role: "admin",
     name: "Administrador",
-    avatar: "https://i.pravatar.cc/150?img=1",
+    avatar: images.avatars.admin,
     phone: "+56 9 8221 1715",
     birthDate: "1985-03-10",
     emergencyContact: { name: "Soporte Creeser", phone: "+56 9 8221 1715" },
@@ -223,7 +225,7 @@ export const mockUsers = [
     password: "alumno123",
     role: "member",
     name: "Ignacio Silva",
-    avatar: "https://i.pravatar.cc/150?img=11",
+    avatar: images.avatars.ignacio,
     belt: "Cinturón Azul",
     membership: "2 veces por semana",
     phone: "+56 9 1234 5678",
@@ -241,7 +243,7 @@ export const mockUsers = [
     password: "instructor123",
     role: "instructor",
     name: "Rodrigo Gutiérrez",
-    avatar: "https://i.pravatar.cc/150?img=33",
+    avatar: images.avatars.rodrigoUser,
     phone: "+56 9 8221 1715",
     birthDate: "1990-05-14",
     emergencyContact: { name: "Ana Gutiérrez", phone: "+56 9 7654 3210" },
@@ -259,7 +261,7 @@ export const mockUsers = [
     password: "socio123",
     role: "member",
     name: "Valentina Rojas",
-    avatar: "https://i.pravatar.cc/150?img=5",
+    avatar: images.avatars.valentina,
     belt: "Cinturón Amarillo",
     membership: "1 vez por semana",
     phone: "+56 9 3456 7890",
@@ -277,7 +279,7 @@ export const mockUsers = [
     password: "mateo123",
     role: "member",
     name: "Mateo Lagos",
-    avatar: "https://i.pravatar.cc/150?img=12",
+    avatar: images.avatars.mateo,
     belt: "Cinturón Verde",
     membership: "2 veces por semana",
     phone: "+56 9 4567 8901",
@@ -295,7 +297,7 @@ export const mockUsers = [
     password: "sofia123",
     role: "member",
     name: "Sofía Méndez",
-    avatar: "https://i.pravatar.cc/150?img=9",
+    avatar: images.avatars.sofia,
     belt: "Cinturón Blanco",
     membership: "1 vez por semana",
     phone: "+56 9 5678 9012",
@@ -313,7 +315,7 @@ export const mockUsers = [
     password: "diego123",
     role: "member",
     name: "Diego Fuentes",
-    avatar: "https://i.pravatar.cc/150?img=14",
+    avatar: images.avatars.diego,
     belt: "Cinturón Rojo",
     membership: "2 veces por semana",
     phone: "+56 9 6789 0123",
@@ -331,7 +333,7 @@ export const mockUsers = [
     password: "isabella123",
     role: "member",
     name: "Isabella Reyes",
-    avatar: "https://i.pravatar.cc/150?img=23",
+    avatar: images.avatars.isabella,
     belt: "Cinturón Amarillo",
     membership: "2 veces por semana",
     phone: "+56 9 7890 1234",
@@ -349,7 +351,7 @@ export const mockUsers = [
     password: "tomas123",
     role: "member",
     name: "Tomás Silva Vera",
-    avatar: "https://i.pravatar.cc/150?img=17",
+    avatar: images.avatars.tomas,
     belt: "Cinturón Blanco",
     membership: "1 vez por semana",
     phone: "+56 9 8901 2345",
@@ -367,7 +369,7 @@ export const mockUsers = [
     password: "fer123",
     role: "member",
     name: "Fernanda Ortiz",
-    avatar: "https://i.pravatar.cc/150?img=26",
+    avatar: images.avatars.fernanda,
     belt: "Cinturón Verde",
     membership: "2 veces por semana",
     phone: "+56 9 9012 3456",
@@ -385,7 +387,7 @@ export const mockUsers = [
     password: "lucas123",
     role: "member",
     name: "Lucas Paredes",
-    avatar: "https://i.pravatar.cc/150?img=18",
+    avatar: images.avatars.lucas,
     belt: "Cinturón Azul",
     membership: "2 veces por semana",
     phone: "+56 9 0123 4567",
@@ -403,7 +405,7 @@ export const mockUsers = [
     password: "martina123",
     role: "member",
     name: "Martina Castro",
-    avatar: "https://i.pravatar.cc/150?img=25",
+    avatar: images.avatars.martina,
     belt: "Cinturón Blanco",
     membership: "1 vez por semana",
     phone: "+56 9 2345 6789",

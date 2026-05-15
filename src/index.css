@@ -82,13 +82,21 @@
   }
 
   .snap-section--footer {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
-    min-height: auto;
+    scroll-snap-align: start ;
+    scroll-snap-stop: always; 
+    height: fit-content;         /* Ocupa el 100% de la pantalla dinámica */
+    min-height: auto;          
+    box-sizing: border-box; /* Incluye el padding en el cálculo de la altura */
+    padding-top: 2rem;      /* Añade padding superior para evitar que el contenido se pegue al borde superior */
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin: 0 !important;
+   
   }
 }
 

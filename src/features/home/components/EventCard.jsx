@@ -45,13 +45,15 @@ const EventCard = ({ event, index }) => {
           height={160}
           loading="lazy"
         />
+        
+        {/* Contenedor de overlay para las badges */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
         {/* Date badge */}
-        <div
+        {/* <div
           className="absolute bottom-3 left-3 flex flex-col items-center px-3 py-2 rounded-lg"
           style={{ backgroundColor: 'var(--color-surface-offset)' }}
-        >
+        
           <span
             className="font-display font-black leading-none"
             style={{ fontSize: 'var(--text-xl)', color: 'var(--color-accent)' }}
@@ -61,9 +63,10 @@ const EventCard = ({ event, index }) => {
           <span className="text-xs uppercase tracking-wider" style={{ color: 'var(--color-text-muted)' }}>
             {month}
           </span>
-        </div>
+        </div>*/}
 
         {/* Status badge */}
+        {/* 
         <div className="absolute top-3 right-3">
           <span
             className="px-2.5 py-1 text-xs font-semibold rounded-full"
@@ -71,8 +74,8 @@ const EventCard = ({ event, index }) => {
           >
             {label}
           </span>
-        </div>
-      </div>
+        </div>*/}
+      </div> 
 
       {/* Content */}
       <div className="p-5 flex-grow flex flex-col">
