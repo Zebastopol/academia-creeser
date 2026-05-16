@@ -5,6 +5,7 @@ import SectionHeading from '../../../shared/components/atoms/SectionHeading'
 import CTAButton from '../../../shared/components/atoms/CTAButton'
 import { useCounterAnimation } from '../../../shared/hooks/useScrollTrigger'
 import { cn } from '../../../shared/utils/cn'
+import { images } from '../../../data/imageMap'
 
 const AUTOPLAY_INTERVAL = 5000
 
@@ -17,7 +18,7 @@ const FEATURES = [
       'Refuerza y practica las técnicas aprendidas a través de nuestra plataforma de entrenamiento.',
     stat: '50/50 presencial - virtual',
     statLabel: 'plataforma',
-    image:  <img src = {images.hero.card1} alt="Plataforma Marcial Avanzada" />, 
+    image:  images.hero.card1, 
   },
   {
     id: 'comunidad',
@@ -27,8 +28,7 @@ const FEATURES = [
       'Ven y sé parte, comparte tus progresos, conoce nuevos amigos y disfruta de nuestras actividades.',
     stat: 'comunidad+',
     statLabel: 'Más que un equipo, una familia',
-    image:
-      <img src = {images.hero.card2} alt="Únete a nuestra comunidad Creeser" />, 
+    image: images.hero.card2, 
   },
   {
     id: 'horarios',
@@ -38,8 +38,7 @@ const FEATURES = [
       'Clases de Lunes a Sábado con horarios adaptados a tu rutina.',
     stat: '6',
     statLabel: 'días a la semana',
-    image:
-      <img src = {images.hero.card3} alt="Horarios Flexibles" />, 
+    image: images.hero.card3, 
   },
   {
     id: 'deportivo',
@@ -49,8 +48,7 @@ const FEATURES = [
       'Aprende y disfruta del Taekwondo con nosotros, no solo en el dojang, también en el deporte y la vida.',
     stat: 'vida sana+',
     statLabel: 'Deporte Marcial y Vida Sana',
-    image:
-      <img src = {images.hero.card4} alt="Deportivo y divertido" />, 
+    image: images.hero.card4, 
   },
 ]
 

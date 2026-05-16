@@ -3,6 +3,7 @@ import EventCard from './EventCard'
 import CTAButton from '../../../shared/components/atoms/CTAButton'
 import { FaArrowRight } from 'react-icons/fa'
 import { useEvents } from '../../events/hooks/useEvents'
+import { images } from '../../../data/imageMap'
 
 const EventsSection = () => {
   const { events, loading } = useEvents(4)

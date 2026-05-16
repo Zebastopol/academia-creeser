@@ -10,20 +10,17 @@ const WHATSAPP_URL = `https://wa.me/56982211715?text=${encodeURIComponent('Hola,
 const Hero = () => {
   const { scrollToSection } = useScrollSetup()
   const reducedMotion = useReducedMotion()
-  const { ref, value: blurFilter } = useMotionScroll(
+  const { ref: heroRef, value: blurFilter } = useMotionScroll(
     [0, 1],
-    ['blur(0px)', 'blur(10px)']
+    ['blur(0px)', 'blur(12px)']
   )
   const motionProps = reducedMotion
     ? {}
-    : {
-        ref,
-        style: { filter: blurFilter },
-      }
+    : { heroRef, style: { filter: blurFilter }}
 
   return (
     <section className="snap-section relative flex items-start justify-center overflow-hidden grain-overlay">
-      <motion.div className="relative w-full" {...motionProps}>
+      <motion.div ref={heroRef} className="relative w-full min-h-screen" {...motionProps}>
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <div
@@ -36,15 +33,13 @@ const Hero = () => {
           <img
             src="/portada_1920_small_650.webp"
             alt="Práctica de Taekwondo en la Academia Creeser"
-            className="w-full h-full object-cover"
-            width={1920}
-            height={1080}
+            className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
           />
         </div>
 
         {/* Content */}
-        <div className="relative z-20 container-custom text-center px-4 pt-12 md:pt-16 pb-8">
+        <div className="relative z-20 container-custom text-center px-4 pt-24 md:pt-32 pb-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

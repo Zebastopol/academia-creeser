@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { useScroll, useTransform } from 'framer-motion'
 
 const SCROLLER = '.page-scroll-container'
@@ -13,16 +13,22 @@ const SCROLLER = '.page-scroll-container'
 export function useMotionScroll(inputRange, outputRange, options = {}) {
   const ref = useRef(null)
   const containerRef = useRef(null)
+  const [containerReady, setContainerReady] = useState(false)
 
   useLayoutEffect(() => {
     if (typeof document === 'undefined') return
-    containerRef.current = document.querySelector(options.container ?? SCROLLER)
+    const element = document.querySelector(options.container ?? SCROLLER)
+    if (element) {
+      containerRef.current = element
+      setContainerReady(true)
+    }
   }, [options.container])
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    container: containerRef.current ? containerRef : undefined,
+    container: containerReady ? containerRef : undefined,
     offset: ['start start', 'end start'],
+    layoutEffect: false,
   })
 
   const value = useTransform(scrollYProgress, inputRange, outputRange)
