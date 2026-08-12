@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ChevronRight, Mail, MapPin, Phone } from 'lucide-react'
 import { FaInstagram, FaFacebook } from 'react-icons/fa'
-import { academiaInfo } from '../../data/mockData'
+import { academiaInfo } from '../../data/publicData'
 import BrandLogoMark from '../atoms/BrandLogoMark'
 
 const Footer = () => {

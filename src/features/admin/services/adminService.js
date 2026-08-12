@@ -1,8 +1,9 @@
+import { classes, events, academiaInfo } from '../../../shared/data/publicData'
 import {
-  mockUsers, classes, events, mockBookings, mockAttendance,
+  mockUsers, mockBookings, mockAttendance,
   mockContactSubmissions, mockMarketingMetrics, mockAcademicCalendar,
-  mockRevenue, academiaInfo,
-} from '../../../shared/data/mockData';
+  mockRevenue,
+} from '../../../shared/data/mockData'
 
 const sleep = (ms = 300) => new Promise((r) => setTimeout(r, ms));
 

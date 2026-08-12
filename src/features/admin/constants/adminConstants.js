@@ -1,10 +1,11 @@
 export const ADMIN_SIDEBAR_ITEMS = [
-  { id: 'dashboard',  label: 'Dashboard',  path: '/admin',          icon: 'FaChartPie' },
-  { id: 'users',      label: 'Usuarios',   path: '/admin/usuarios', icon: 'FaUsers' },
-  { id: 'classes',    label: 'Clases',     path: '/admin/clases',   icon: 'FaChalkboardTeacher' },
-  { id: 'events',     label: 'Eventos',    path: '/admin/eventos',  icon: 'FaCalendarAlt' },
-  { id: 'bookings',   label: 'Reservas',   path: '/admin/reservas', icon: 'FaClipboardList' },
-  { id: 'reports',    label: 'Reportes',   path: '/admin/reportes', icon: 'FaFileAlt' },
+  { id: 'dashboard',  label: 'Dashboard',  path: '/admin',            icon: 'FaChartPie' },
+  { id: 'users',      label: 'Usuarios',   path: '/admin/usuarios',   icon: 'FaUsers' },
+  { id: 'classes',    label: 'Clases',     path: '/admin/clases',     icon: 'FaChalkboardTeacher' },
+  { id: 'events',     label: 'Eventos',    path: '/admin/eventos',    icon: 'FaCalendarAlt' },
+  { id: 'bookings',   label: 'Reservas',   path: '/admin/reservas',   icon: 'FaClipboardList' },
+  { id: 'reports',    label: 'Reportes',   path: '/admin/reportes',   icon: 'FaFileAlt' },
+  { id: 'content',    label: 'Contenido',  path: '/admin/contenido',  icon: 'FaEdit' },
 ];
 
 export const USER_STATUS = {

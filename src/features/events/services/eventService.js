@@ -1,4 +1,4 @@
-import { events } from '../../../shared/data/mockData';
+import { events } from '../../../shared/data/publicData'
 
 const sleep = (ms = 300) => new Promise(resolve => setTimeout(resolve, ms));
 

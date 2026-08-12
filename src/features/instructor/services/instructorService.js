@@ -1,7 +1,8 @@
+import { classes, academiaInfo } from '../../../shared/data/publicData'
 import {
-  mockUsers, classes, mockBookings, mockAttendance,
-  mockProgressNotes, academiaInfo,
-} from '../../../shared/data/mockData';
+  mockUsers, mockBookings, mockAttendance,
+  mockProgressNotes,
+} from '../../../shared/data/mockData'
 import { DAY_MAP } from '../constants/instructorConstants';
 
 const sleep = (ms = 300) => new Promise((r) => setTimeout(r, ms));

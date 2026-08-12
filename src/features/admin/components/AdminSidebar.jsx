@@ -2,13 +2,13 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   FaChartPie, FaUsers, FaChalkboardTeacher, FaCalendarAlt,
-  FaClipboardList, FaFileAlt, FaTimes, FaArrowLeft
+  FaClipboardList, FaFileAlt, FaEdit, FaTimes, FaArrowLeft
 } from 'react-icons/fa';
 import { ADMIN_SIDEBAR_ITEMS } from '../constants/adminConstants';
 
 const ICON_MAP = {
   FaChartPie, FaUsers, FaChalkboardTeacher, FaCalendarAlt,
-  FaClipboardList, FaFileAlt,
+  FaClipboardList, FaFileAlt, FaEdit,
 };
 
 /**

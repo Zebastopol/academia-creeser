@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown, FaSearch } from 'react-icons/fa';
-import { faqs } from '../shared/data/mockData';
+import { faqs } from '../shared/data/publicData';
 import SEO from '../shared/components/common/SEO';
 import Button from '../shared/components/atoms/Button';
 

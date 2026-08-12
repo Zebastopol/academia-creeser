@@ -2,10 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
   build: {
-    // Optimización del bundle
     rollupOptions: {
       output: {
         manualChunks: {
@@ -16,21 +15,19 @@ export default defineConfig({
         },
       },
     },
-    // Tamaño máximo de chunk warning
     chunkSizeWarningLimit: 1000,
-    // Minificación con esbuild (más rápido que terser)
     minify: 'esbuild',
-    // Sourcemaps para debugging (opcional en producción)
     sourcemap: false,
   },
-  // Optimización de servidor de desarrollo
+  esbuild: {
+    drop: mode === 'production' ? ['console', 'debugger'] : [],
+  },
   server: {
     port: 5173,
     open: true,
   },
-  // Preview server
   preview: {
     port: 4173,
     open: true,
   },
-})
+}))

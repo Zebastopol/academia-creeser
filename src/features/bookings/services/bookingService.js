@@ -1,4 +1,5 @@
-import { mockBookings, classes, academiaInfo } from '../../../shared/data/mockData';
+import { classes, academiaInfo } from '../../../shared/data/publicData'
+import { mockBookings } from '../../../shared/data/mockData'
 import {
   DAY_MAP,
   SLOT_STATUS,

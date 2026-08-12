@@ -1,4 +1,5 @@
-import { mockPayments, mockBankData, memberships, mockAttendance } from '../../../shared/data/mockData';
+import { memberships } from '../../../shared/data/publicData'
+import { mockPayments, mockBankData, mockAttendance } from '../../../shared/data/mockData'
 import { MONTH_LABELS, ENROLLMENT_FEE } from '../constants/checkoutConstants';
 
 /**

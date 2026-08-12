@@ -4,7 +4,7 @@ import { FaCalendar, FaTrophy, FaClock, FaChartLine, FaChartBar } from 'react-ic
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../features/auth/context/AuthContext'
 import { useBookings } from '../../features/bookings/hooks/useBookings'
-import { academiaInfo } from '../../shared/data/mockData'
+import { academiaInfo } from '../../shared/data/publicData'
 import Button from '../../shared/components/atoms/Button'
 import StatsGrid from '../../features/dashboard/components/StatsGrid'
 import UpcomingClasses from '../../features/dashboard/components/UpcomingClasses'

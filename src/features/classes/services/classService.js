@@ -1,4 +1,4 @@
-import { classes } from '../../../shared/data/mockData';
+import { classes } from '../../../shared/data/publicData'
 
 const sleep = (ms = 300) => new Promise(resolve => setTimeout(resolve, ms));
 

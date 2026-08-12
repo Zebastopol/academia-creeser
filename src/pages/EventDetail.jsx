@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { events, academiaInfo } from '../shared/data/mockData';
+import { events, academiaInfo } from '../shared/data/publicData';
 import Button from '../shared/components/atoms/Button';
 import SEO from '../shared/components/common/SEO';
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTag, FaChevronLeft, FaPhone, FaEnvelope } from 'react-icons/fa';

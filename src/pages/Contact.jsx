@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaInstagram, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import { useContactForm } from '../features/contact/hooks/useContactForm';
 import ContactForm from '../features/contact/components/ContactForm';
-import { academiaInfo } from '../shared/data/mockData';
+import { academiaInfo } from '../shared/data/publicData';
 import SEO from '../shared/components/common/SEO';
 
 const CONTACT_ITEMS = [

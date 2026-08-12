@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { FaChevronDown } from 'react-icons/fa'
 import CTAButton from '../../../shared/components/atoms/CTAButton'
-import { academiaInfo } from '../../../shared/data/mockData'
+import { academiaInfo } from '../../../shared/data/publicData'
 import { useMotionScroll } from '../../../shared/hooks/useMotionScroll'
 import { useScrollSetup } from '../../../shared/hooks/useScrollTrigger'
 

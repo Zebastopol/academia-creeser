@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { FaFilter, FaMapMarkerAlt } from 'react-icons/fa';
 import { useClasses } from '../features/classes/hooks/useClasses';
-import { academiaInfo } from '../shared/data/mockData';
+import { academiaInfo } from '../shared/data/publicData';
 import ClassCard from '../features/home/components/ClassCard';
 import SectionHeading from '../shared/components/atoms/SectionHeading';
 import SEO from '../shared/components/common/SEO';

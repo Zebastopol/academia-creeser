@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaQuoteLeft } from 'react-icons/fa';
-import { academiaInfo, instructor } from '../shared/data/mockData';
+import { academiaInfo, instructor } from '../shared/data/publicData';
 import SEO from '../shared/components/common/SEO';
 import Button from '../shared/components/atoms/Button';
 
