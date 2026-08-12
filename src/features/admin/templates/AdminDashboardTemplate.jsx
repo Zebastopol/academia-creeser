@@ -6,10 +6,12 @@ import MarketingOverview from '../components/dashboard/MarketingOverview';
 import RevenueChart from '../components/dashboard/RevenueChart';
 import AcademicCalendar from '../components/dashboard/AcademicCalendar';
 import CalendarEventForm from '../components/dashboard/CalendarEventForm';
+import TrafficDashboard from '../components/dashboard/TrafficDashboard';
 import StatusBadge from '../../../shared/components/molecules/StatusBadge';
 
 const TABS = [
   { id: 'overview', label: 'Resumen' },
+  { id: 'traffic', label: 'Tráfico' },
   { id: 'marketing', label: 'Marketing' },
   { id: 'revenue', label: 'Ingresos' },
   { id: 'calendar', label: 'Calendario' },
@@ -59,24 +61,29 @@ const AdminDashboardTemplate = () => {
 
       {/* Tab Content */}
       {activeTab === 'overview' && (
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <RevenueChart revenue={revenue} />
-          <div className="p-5 bg-white border border-gray-100 rounded-xl shadow-soft">
-            <h3 className="mb-4 text-base font-bold text-gray-900">Últimos Contactos</h3>
-            <div className="space-y-3">
-              {contacts.slice(0, 5).map((c) => (
-                <div key={c.id} className="flex items-start justify-between p-3 rounded-lg bg-gray-50">
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate">{c.name}</p>
-                    <p className="text-xs text-gray-500 truncate">{c.message}</p>
+        <div className="space-y-6">
+          <TrafficDashboard />
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <RevenueChart revenue={revenue} />
+            <div className="p-5 bg-white border border-gray-100 rounded-xl shadow-soft">
+              <h3 className="mb-4 text-base font-bold text-gray-900">Últimos Contactos</h3>
+              <div className="space-y-3">
+                {contacts.slice(0, 5).map((c) => (
+                  <div key={c.id} className="flex items-start justify-between p-3 rounded-lg bg-gray-50">
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium text-gray-900 truncate">{c.name}</p>
+                      <p className="text-xs text-gray-500 truncate">{c.message}</p>
+                    </div>
+                    <StatusBadge status={c.status} className="ml-2 flex-shrink-0" />
                   </div>
-                  <StatusBadge status={c.status} className="ml-2 flex-shrink-0" />
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       )}
+
+      {activeTab === 'traffic' && <TrafficDashboard />}
 
       {activeTab === 'marketing' && <MarketingOverview marketing={marketing} />}
 

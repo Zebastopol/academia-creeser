@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AdminSidebar from '../../features/admin/components/AdminSidebar';
 import AdminHeader from '../../features/admin/components/AdminHeader';
+import ConstructionBanner from '../components/molecules/ConstructionBanner';
 
 const AdminLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -11,6 +12,7 @@ const AdminLayout = ({ children }) => {
 
       <div className="flex flex-col flex-1 min-w-0 lg:ml-0">
         <AdminHeader onToggleSidebar={() => setSidebarOpen((o) => !o)} />
+        <ConstructionBanner variant="admin" />
         <main className="flex-1 p-4 sm:p-6">{children}</main>
       </div>
     </div>

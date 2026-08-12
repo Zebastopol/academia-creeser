@@ -61,28 +61,42 @@ const TestimonialsSection = () => {
             >
               {/* Avatar + info */}
               <div className="flex items-center justify-center gap-4 mb-6">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-16 h-16 rounded-full object-cover border-2"
-                  style={{ borderColor: 'var(--color-primary)' }}
-                  width={64}
-                  height={64}
-                  loading="lazy"
-                />
+                {t.authorPhoto ? (
+                  <img
+                    src={t.authorPhoto}
+                    alt={t.authorName}
+                    referrerPolicy="no-referrer"
+                    className="w-16 h-16 rounded-full object-cover border-2"
+                    style={{ borderColor: 'var(--color-primary)' }}
+                    width={64}
+                    height={64}
+                    loading="lazy"
+                  />
+                ) : (
+                  <div
+                    className="flex items-center justify-center w-16 h-16 text-xl font-bold text-white rounded-full border-2"
+                    style={{
+                      backgroundColor: 'var(--color-primary)',
+                      borderColor: 'var(--color-primary)',
+                    }}
+                    aria-hidden="true"
+                  >
+                    {t.authorName?.charAt(0).toUpperCase() || 'G'}
+                  </div>
+                )}
                 <div className="text-left">
                   <h4 className="font-bold" style={{ color: 'var(--color-text)' }}>
-                    {t.name}
+                    {t.authorName}
                   </h4>
                   <p className="text-sm" style={{ color: 'var(--color-text-faint)' }}>
-                    {t.role}
+                    Reseña de Google
                   </p>
                 </div>
               </div>
 
               {/* Stars */}
               <div className="flex justify-center gap-1 mb-4">
-                {[...Array(t.rating)].map((_, i) => (
+                {[...Array(Math.round(t.rating || 0))].map((_, i) => (
                   <FaStar key={i} className="text-gold-400" />
                 ))}
               </div>

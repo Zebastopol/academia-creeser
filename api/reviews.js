@@ -1,20 +1,38 @@
 /**
  * Vercel Serverless Function — Google Places Reviews Proxy
  *
- * Consulta las reseñas de Google Places para la Academia Creeser
- * y las cachea para evitar llamadas excesivas a la API.
+ * Consulta reseñas del Place ID de Academia Creeser usando la
+ * Places API (New) v1, con field mask acotado a EXACTAMENTE 5 campos:
+ *   - reviews.rating              (calificación)
+ *   - reviews.text                (opinión)
+ *   - reviews.publishTime         (fecha)
+ *   - reviews.authorAttribution.displayName (nombre)
+ *   - reviews.authorAttribution.photoUri    (foto)
  *
- * Variables de entorno requeridas en Vercel:
- * - GOOGLE_PLACES_API_KEY: Clave de API de Google Cloud
- * - GOOGLE_PLACES_PLACE_ID: ID del lugar en Google Maps
+ * NUNCA se solicita: link a la reseña, idioma, respuesta del propietario,
+ * fotos adjuntas ni reviewSummary (IA).
+ *
+ * Variables de entorno server-side (Vercel):
+ *   - GOOGLE_PLACES_API_KEY
+ *   - GOOGLE_PLACES_ID
  *
  * Endpoint: GET /api/reviews
- * Respuesta: { reviews: [...], rating: number, totalReviews: number }
+ * Respuesta: { reviews: [{ rating, text, date, authorName, authorPhoto }], rating, totalReviews, source }
  */
 
 let cachedData = null
 let cacheTimestamp = 0
-const CACHE_DURATION_MS = 6 * 60 * 60 * 1000 // 6 horas
+const CACHE_DURATION_MS = 6 * 60 * 60 * 1000 // 6 horas — reviews cambian poco
+
+const FIELD_MASK = [
+  'rating',
+  'userRatingCount',
+  'reviews.rating',
+  'reviews.text',
+  'reviews.publishTime',
+  'reviews.authorAttribution.displayName',
+  'reviews.authorAttribution.photoUri',
+].join(',')
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -22,10 +40,10 @@ export default async function handler(req, res) {
   }
 
   res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Cache-Control', 's-maxage=21600, stale-while-revalidate')
+  res.setHeader('Cache-Control', 's-maxage=21600, stale-while-revalidate=86400')
 
   const apiKey = process.env.GOOGLE_PLACES_API_KEY
-  const placeId = process.env.GOOGLE_PLACES_PLACE_ID
+  const placeId = process.env.GOOGLE_PLACES_ID
 
   if (!apiKey || !placeId) {
     return res.status(200).json({
@@ -33,7 +51,7 @@ export default async function handler(req, res) {
       rating: 0,
       totalReviews: 0,
       source: 'not_configured',
-      message: 'Google Places API no configurada. Configure GOOGLE_PLACES_API_KEY y GOOGLE_PLACES_PLACE_ID en Vercel.',
+      message: 'GOOGLE_PLACES_API_KEY y/o GOOGLE_PLACES_ID no configuradas en Vercel.',
     })
   }
 
@@ -43,32 +61,42 @@ export default async function handler(req, res) {
   }
 
   try {
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&language=es&key=${apiKey}`
+    const url = `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?languageCode=es`
 
-    const response = await fetch(url)
-    const data = await response.json()
+    const response = await fetch(url, {
+      headers: {
+        'X-Goog-Api-Key': apiKey,
+        'X-Goog-FieldMask': FIELD_MASK,
+      },
+    })
 
-    if (data.status !== 'OK') {
-      console.error('[Google Places] Error:', data.status, data.error_message)
-      return res.status(502).json({
-        error: 'Error al consultar Google Places',
-        details: data.status,
-      })
+    if (!response.ok) {
+      const errText = await response.text()
+      console.error('[Google Places] HTTP', response.status, errText)
+      return res.status(502).json({ error: 'Google Places API error', status: response.status })
     }
 
+    const data = await response.json()
+
+    const rawReviews = Array.isArray(data.reviews) ? data.reviews : []
+    const reviews = rawReviews
+      .map((r) => {
+        const author = r.authorAttribution || {}
+        const text = typeof r.text === 'object' ? r.text?.text : r.text
+        return {
+          rating: r.rating ?? null,
+          text: text || '',
+          date: r.publishTime || null,
+          authorName: author.displayName || 'Anónimo',
+          authorPhoto: author.photoUri || '',
+        }
+      })
+      .filter((r) => r.rating != null && r.text)
+
     const result = {
-      reviews: (data.result.reviews || []).map((r) => ({
-        id: `gp-${r.time}`,
-        name: r.author_name,
-        role: 'Reseña de Google',
-        image: r.profile_photo_url || '',
-        rating: r.rating,
-        text: r.text,
-        date: new Date(r.time * 1000).toISOString().split('T')[0],
-        relativeTime: r.relative_time_description,
-      })),
-      rating: data.result.rating || 0,
-      totalReviews: data.result.user_ratings_total || 0,
+      reviews,
+      rating: data.rating || 0,
+      totalReviews: data.userRatingCount || 0,
       source: 'google_places',
     }
 
